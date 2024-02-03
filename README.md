@@ -1,5 +1,7 @@
 # Full Stack POS APP
 
+![CAPTURE!](https://raw.githubusercontent.com/pojokcodeid/fulstack-posapp-expressjs-reactjs/main/img.png)
+
 # Setup
 
 - Rename file frontend/.env_example
