@@ -1,0 +1,114 @@
+ [LOGGER] 2024-01-30 08:49:37.325 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:127:26)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/youtube/livesearch/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+ [LOGGER] 2024-01-30 09:47:28.763 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at updateProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:213:28)
+ [LOGGER] 2024-01-30 10:16:59.790 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at updateProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:213:28)
+ [LOGGER] 2024-01-30 10:33:43.533 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at updateProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:213:28)
+ [LOGGER] 2024-01-30 10:39:02.099 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at updateProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:206:39)
+ [LOGGER] 2024-01-30 10:43:01.807 AM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at updateProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:206:39)
+ [LOGGER] 2024-01-30 07:16:22.599 PM error : controllers/cart.controller.js:deleteAllCart - 
+Invalid `prisma.orderreturn.create()` invocation:
+
+{
+  data: {
+    code: "ORDR-1706616982593",
+    date: new Date("2024-01-30T12:16:18.763Z"),
+    note: "",
+    userId: NaN,
++   user: {
++     create: UserCreateWithoutOrderreturnInput | UserUncheckedCreateWithoutOrderreturnInput,
++     connectOrCreate: UserCreateOrConnectWithoutOrderreturnInput,
++     connect: UserWhereUniqueInput
++   }
+  }
+}
+
+Argument `user` is missing.
+ [LOGGER] 2024-01-30 07:19:37.584 PM error : controllers/cart.controller.js:deleteAllCart - 
+Invalid `prisma.orderreturn.create()` invocation:
+
+{
+  data: {
+    code: "ORDR-1706617177578",
+    date: new Date("2024-01-30T12:19:27.291Z"),
+    note: "",
+    userId: NaN,
++   user: {
++     create: UserCreateWithoutOrderreturnInput | UserUncheckedCreateWithoutOrderreturnInput,
++     connectOrCreate: UserCreateOrConnectWithoutOrderreturnInput,
++     connect: UserWhereUniqueInput
++   }
+  }
+}
+
+Argument `user` is missing.
+ [LOGGER] 2024-01-30 07:27:59.336 PM error : controllers/cart.controller.js:deleteAllCart - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+ [LOGGER] 2024-01-30 07:27:59.342 PM error : uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:278:15)
+    at insertOrderReturn (file:///C:/youtube/livesearch/backend/src/controllers/orderReturn.controller.js:74:28)
+ [LOGGER] 2024-01-30 07:29:22.669 PM error : controllers/cart.controller.js:deleteAllCart - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+ [LOGGER] 2024-01-30 07:29:22.673 PM error : uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:278:15)
+    at insertOrderReturn (file:///C:/youtube/livesearch/backend/src/controllers/orderReturn.controller.js:74:28)
+ [LOGGER] 2024-01-30 07:31:30.595 PM error : controllers/cart.controller.js:deleteAllCart - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+ [LOGGER] 2024-01-30 07:31:30.602 PM error : uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:278:15)
+    at insertOrderReturn (file:///C:/youtube/livesearch/backend/src/controllers/orderReturn.controller.js:75:28)
+ [LOGGER] 2024-01-30 07:33:34.429 PM error : controllers/cart.controller.js:deleteAllCart - Converting circular structure to JSON
+    --> starting at object with constructor 'Socket'
+    |     property 'parser' -> object with constructor 'HTTPParser'
+    --- property 'socket' closes the circle
+ [LOGGER] 2024-01-30 07:33:34.436 PM error : uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\youtube\livesearch\backend\node_modules\express\lib\response.js:278:15)
+    at insertOrderReturn (file:///C:/youtube/livesearch/backend/src/controllers/orderReturn.controller.js:75:28)
+ [LOGGER] 2024-01-30 07:37:19.323 PM error : controllers/cart.controller.js:deleteAllCart - qty and product cannot be empty
+ [LOGGER] 2024-01-30 07:38:18.969 PM error : controllers/cart.controller.js:deleteAllCart - qty and product cannot be empty
+ [LOGGER] 2024-01-30 07:38:34.849 PM error : controllers/cart.controller.js:deleteAllCart - qty and product cannot be empty
+ [LOGGER] 2024-01-30 07:38:45.614 PM error : controllers/cart.controller.js:deleteAllCart - Cannot read properties of undefined (reading 'create')
+ [LOGGER] 2024-01-30 07:40:56.637 PM error : controllers/cart.controller.js:deleteAllCart - Cannot read properties of undefined (reading 'create')
+ [LOGGER] 2024-01-30 07:51:48.014 PM error : controllers/cart.controller.js:deleteAllCart - qty and product cannot be empty
+ [LOGGER] 2024-01-30 07:52:10.598 PM error : controllers/cart.controller.js:deleteAllCart - qty and product cannot be empty

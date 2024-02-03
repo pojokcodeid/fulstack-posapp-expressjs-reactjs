@@ -1,0 +1,33 @@
+ [LOGGER] 2024-02-01 08:52:03.514 PM error : controllers/purchase.controller.js:createPurchase - Product not found
+ [LOGGER] 2024-02-01 09:00:01.324 PM error : controllers/purchase.controller.js:createPurchase - Product not found
+ [LOGGER] 2024-02-01 09:01:14.311 PM error : controllers/purchase.controller.js:createPurchase - Product not found
+ [LOGGER] 2024-02-01 09:02:50.094 PM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.product.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    qty: {
+      increment: 0
+    }
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-02-01 09:13:37.194 PM error : controllers/purchase.controller.js:getAllPurchase - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1052`. Message: `Column 'id' in field list is ambiguous`
+ [LOGGER] 2024-02-01 09:14:08.838 PM error : controllers/purchase.controller.js:getAllPurchase - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1052`. Message: `Column 'id' in where clause is ambiguous`
+ [LOGGER] 2024-02-01 09:14:12.903 PM error : controllers/purchase.controller.js:getAllPurchase - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1052`. Message: `Column 'id' in where clause is ambiguous`

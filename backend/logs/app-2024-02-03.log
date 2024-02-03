@@ -1,0 +1,126 @@
+ [LOGGER] 2024-02-03 06:52:08.786 AM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.purchase.create()` invocation:
+
+{
+  data: {
+    code: "PUR-1706917928776",
+    date: new Date("2024-02-02T23:51:40.209Z"),
+    note: "Pembelain Mingguan",
+    total: 190000,
+    ~~~~~
+    ppn: 20900,
+    grandTotal: 210900,
+    userId: 1,
+?   id?: Int,
+?   Purchasedetail?: PurchasedetailUncheckedCreateNestedManyWithoutPurchaseInput
+  }
+}
+
+Unknown argument `total`. Did you mean `note`? Available options are marked with ?.
+ [LOGGER] 2024-02-03 09:22:09.953 AM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.purchase.create()` invocation:
+
+{
+  data: {
+    code: "PUR-1706926929944",
+    date: "2023-02-03 00:00:00.000000",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    note: "test",
+    total: 50000,
+    ppn: 5500,
+    grandTotal: 55500,
+    userId: 1
+  }
+}
+
+Invalid value for argument `date`: input contains invalid characters. Expected ISO-8601 DateTime.
+ [LOGGER] 2024-02-03 09:22:17.269 AM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.purchase.create()` invocation:
+
+{
+  data: {
+    code: "PUR-1706926937267",
+    date: "2023-02-03 00:00:00.000000",
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    note: "test",
+    total: 50000,
+    ppn: 5500,
+    grandTotal: 55500,
+    userId: 1
+  }
+}
+
+Invalid value for argument `date`: input contains invalid characters. Expected ISO-8601 DateTime.
+ [LOGGER] 2024-02-03 09:22:38.032 AM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.purchase.create()` invocation:
+
+{
+  data: {
+    code: "PUR-1706926958025",
+    date: "2023-02-03 00:00:00",
+          ~~~~~~~~~~~~~~~~~~~~~
+    note: "test",
+    total: 50000,
+    ppn: 5500,
+    grandTotal: 55500,
+    userId: 1
+  }
+}
+
+Invalid value for argument `date`: input contains invalid characters. Expected ISO-8601 DateTime.
+ [LOGGER] 2024-02-03 09:23:01.487 AM error : controllers/purchase.controller.js:createPurchase - 
+Invalid `prisma.purchase.create()` invocation:
+
+{
+  data: {
+    code: "PUR-1706926981481",
+    date: "2023-02-03",
+          ~~~~~~~~~~~~
+    note: "test",
+    total: 50000,
+    ppn: 5500,
+    grandTotal: 55500,
+    userId: 1
+  }
+}
+
+Invalid value for argument `date`: premature end of input. Expected ISO-8601 DateTime.
+ [LOGGER] 2024-02-03 12:41:12.453 PM error : controllers/purchase.controller.js:generateExcel - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1146`. Message: `Table 'relasi_db.purchases' doesn't exist`
+ [LOGGER] 2024-02-03 01:11:54.375 PM error : uncaughtException: Cannot access 'year' before initialization
+ReferenceError: Cannot access 'year' before initialization
+    at purchaseYearly (file:///C:/youtube/livesearch/backend/src/controllers/purchase.controller.js:339:44)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/youtube/livesearch/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:286:9
+ [LOGGER] 2024-02-03 01:27:03.042 PM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1706941623034",
+    date: 1706918400000,
+          ~~~~~~~~~~~~~
+    total: 89000,
+    ppn: 9790,
+    grandTotal: 98790,
+    userId: 1
+  }
+}
+
+Argument `date`: Invalid value provided. Expected DateTime, provided Int.

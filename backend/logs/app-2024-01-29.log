@@ -1,0 +1,562 @@
+ [LOGGER] 2024-01-29 10:50:42.758 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:50:42.766 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:50:59.814 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:50:59.823 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:51:30.527 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:52:04.378 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 10:59:50.678 AM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1706500790669",
+    date: "2024-01-29T03:59:50.656Z",
+    total: 100000,
++   ppn: Decimal
+  }
+}
+
+Argument `ppn` is missing.
+ [LOGGER] 2024-01-29 11:51:23.830 AM error : controllers/order.controller.js:getOrderById - 
+Invalid `prisma.orders.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'orderdetail'.
+ [LOGGER] 2024-01-29 05:38:21.595 PM error : controllers/order.controller.js:getAllOrder - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1054`. Message: `Unknown column 'createdAt' in 'field list'`
+ [LOGGER] 2024-01-29 05:40:08.445 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   userId?: IntFilter | Int,
+?   user?: UserRelationFilter | UserWhereInput,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 05:40:12.355 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   userId?: IntFilter | Int,
+?   user?: UserRelationFilter | UserWhereInput,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 05:40:34.941 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   userId?: IntFilter | Int,
+?   user?: UserRelationFilter | UserWhereInput,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 06:07:47.050 PM error : controllers/user.controller.js:createUser - data and salt arguments required
+ [LOGGER] 2024-01-29 06:19:28.247 PM error : controllers/user.controller.js:createUser - 
+Invalid `prisma.user.create()` invocation:
+
+
+Unique constraint failed on the constraint: `User_userName_key`
+ [LOGGER] 2024-01-29 06:20:07.700 PM error : controllers/user.controller.js:deleteUser - 
+Invalid `prisma.user.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+ [LOGGER] 2024-01-29 06:21:12.893 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:22:39.378 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:24:04.561 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:25:03.185 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:25:50.659 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:26:14.385 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:27:36.151 PM error : controllers/user.controller.js:getUserById - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-01-29 06:29:24.146 PM error : controllers/user.controller.js:loginUser - 
+Invalid `prisma.user.findUnique()` invocation:
+
+{
+  where: {
+    userName: undefined,
+?   id?: Int,
+?   AND?: UserWhereInput | UserWhereInput[],
+?   OR?: UserWhereInput[],
+?   NOT?: UserWhereInput | UserWhereInput[],
+?   password?: StringFilter | String,
+?   name?: StringFilter | String,
+?   role?: StringFilter | String,
+?   Carts?: CartsListRelationFilter,
+?   Orders?: OrdersListRelationFilter
+  }
+}
+
+Argument `where` of type UserWhereUniqueInput needs at least one of `id` or `userName` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 09:45:25.524 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 09:48:22.037 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 1,
+    userId: 1,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   user?: UserRelationFilter | UserWhereInput,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 09:49:00.885 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 1,
+    userId: 1,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   user?: UserRelationFilter | UserWhereInput,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-29 09:51:59.644 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findMany()` invocation:
+
+{
+  where: {
+    productId: 1,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 09:56:16.272 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: NaN
+  },
+  data: {
+    productName: undefined,
+    qty: NaN,
+    totalPrice: NaN,
+    note: undefined,
+    productId: NaN,
++   price: Decimal
+  }
+}
+
+Argument `price` is missing.
+ [LOGGER] 2024-01-29 09:56:36.509 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: NaN
+  },
+  data: {
+    productName: undefined,
+    qty: NaN,
+    totalPrice: NaN,
+    note: undefined,
+    productId: NaN,
++   price: Decimal
+  }
+}
+
+Argument `price` is missing.
+ [LOGGER] 2024-01-29 09:57:05.502 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: NaN
+  },
+  data: {
+    productName: undefined,
+    qty: NaN,
+    totalPrice: NaN,
+    note: undefined,
+    productId: NaN,
++   price: Decimal
+  }
+}
+
+Argument `price` is missing.
+ [LOGGER] 2024-01-29 09:59:41.209 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-01-29 10:00:32.515 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-01-29 10:02:10.342 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-01-29 10:04:04.481 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-01-29 10:06:52.345 PM error : controllers/cart.controller.js:getCartByProductId - id is not defined
+ [LOGGER] 2024-01-29 10:13:45.717 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:14:25.234 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:15:38.445 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:17:48.829 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:19:52.034 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:21:35.398 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+{
+  where: {
+    id: 29,
++   userId: {
++     equals: Int | IntFieldRefInput,
++     in: Int[],
++     notIn: Int[],
++     lt: Int | IntFieldRefInput,
++     lte: Int | IntFieldRefInput,
++     gt: Int | IntFieldRefInput,
++     gte: Int | IntFieldRefInput,
++     not: Int | NestedIntFilter
++   }
+  }
+}
+
+Argument `userId` is missing.
+ [LOGGER] 2024-01-29 10:30:22.951 PM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1706542222944",
+    date: "2024-01-29T15:30:22.930Z",
+    total: 95000,
+    ppn: 10450,
+    grandTotal: 105450,
++   user: {
++     create: UserCreateWithoutOrdersInput | UserUncheckedCreateWithoutOrdersInput,
++     connectOrCreate: UserCreateOrConnectWithoutOrdersInput,
++     connect: UserWhereUniqueInput
++   }
+  }
+}
+
+Argument `user` is missing.
+ [LOGGER] 2024-01-29 10:31:56.250 PM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1706542316243",
+    date: "2024-01-29T15:31:56.152Z",
+    total: 95000,
+    ppn: 10450,
+    grandTotal: 105450,
++   user: {
++     create: UserCreateWithoutOrdersInput | UserUncheckedCreateWithoutOrdersInput,
++     connectOrCreate: UserCreateOrConnectWithoutOrdersInput,
++     connect: UserWhereUniqueInput
++   }
+  }
+}
+
+Argument `user` is missing.
+ [LOGGER] 2024-01-29 10:32:21.667 PM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1706542341658",
+    date: "2024-01-29T15:32:21.639Z",
+    total: 95000,
+    ppn: 10450,
+    grandTotal: 105450,
++   user: {
++     create: UserCreateWithoutOrdersInput | UserUncheckedCreateWithoutOrdersInput,
++     connectOrCreate: UserCreateOrConnectWithoutOrdersInput,
++     connect: UserWhereUniqueInput
++   }
+  }
+}
+
+Argument `user` is missing.
+ [LOGGER] 2024-01-29 11:14:06.451 PM error : controllers/user.controller.js:loginUser - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.

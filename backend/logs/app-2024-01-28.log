@@ -1,0 +1,418 @@
+ [LOGGER] 2024-01-28 09:37:40.735 AM error : controllers/product.controller.js:deleteProduct - ENOENT: no such file or directory, unlink 'C:\youtube\livesearch\backend\public\images\c7f00866f178695c814e07ea433264b5.jpg'
+ [LOGGER] 2024-01-28 10:27:29.685 AM error : controllers/product.controller.js:deleteProduct - ENOENT: no such file or directory, unlink 'C:\youtube\livesearch\backend\public\images\ebe5223963a4c14e36b4d26d52521016.png'
+ [LOGGER] 2024-01-28 10:27:32.524 AM error : controllers/product.controller.js:deleteProduct - ENOENT: no such file or directory, unlink 'C:\youtube\livesearch\backend\public\images\ebe5223963a4c14e36b4d26d52521016.png'
+ [LOGGER] 2024-01-28 11:00:55.237 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:00:55.247 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:11.121 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:11.129 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:42.271 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:42.278 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:44.204 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:05:44.206 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `N/A`. Message: `N/A`
+ [LOGGER] 2024-01-28 11:06:48.788 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%?%
+        ORDER BY id DESC LIMIT ?' at line 2`
+ [LOGGER] 2024-01-28 11:06:48.793 AM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%?%
+        ORDER BY id DESC LIMIT ?' at line 2`
+ [LOGGER] 2024-01-28 02:21:36.030 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:21:36.043 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:12.126 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:12.128 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:16.714 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:16.728 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:27.687 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:22:27.689 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:23:26.307 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:23:26.309 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:23:56.834 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:23:56.841 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:25:26.895 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:25:26.898 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:25:45.230 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:25:45.233 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:26:09.837 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:26:09.839 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:26:21.348 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:26:21.349 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:27:25.894 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:27:34.953 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:27:34.954 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:27:57.485 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:27:57.487 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:02.242 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:02.244 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:12.176 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:12.179 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:27.144 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:27.145 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:57.055 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:28:57.056 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:29:20.751 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:29:20.752 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:32:37.443 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:32:37.444 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:33:03.613 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:33:03.614 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:39:14.550 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:39:14.554 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:39:26.824 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:39:26.828 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:41:00.506 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:41:00.508 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:41:09.737 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:41:22.488 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:41:22.489 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:46:35.241 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:46:46.203 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:46:46.204 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 02:47:08.721 PM error : controllers/kategory.controller.js:getAllCategory - test
+ [LOGGER] 2024-01-28 06:40:49.202 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:40:51.633 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:40:52.837 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:41:06.569 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:47:24.264 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:47:54.862 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 06:49:19.475 PM error : controllers/cart.controller.js:getCartByProductId - 
+Invalid `prisma.carts.findUnique()` invocation:
+
+{
+  where: {
+    productId: 76,
+?   id?: Int,
+?   AND?: CartsWhereInput | CartsWhereInput[],
+?   OR?: CartsWhereInput[],
+?   NOT?: CartsWhereInput | CartsWhereInput[],
+?   price?: DecimalFilter | Decimal,
+?   productName?: StringFilter | String,
+?   qty?: IntFilter | Int,
+?   totalPrice?: DecimalFilter | Decimal,
+?   note?: StringFilter | String,
+?   product?: ProductRelationFilter | ProductWhereInput
+  }
+}
+
+Argument `where` of type CartsWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+ [LOGGER] 2024-01-28 07:09:21.338 PM error : controllers/cart.controller.js:getAllCart - 
+Invalid `prisma.carts.findMany()` invocation:
+
+{
+  orderBy: {
+    createdAt: "desc",
+    ~~~~~~~~~
+?   id?: SortOrder,
+?   price?: SortOrder,
+?   productName?: SortOrder,
+?   qty?: SortOrder,
+?   totalPrice?: SortOrder,
+?   note?: SortOrder,
+?   productId?: SortOrder,
+?   product?: ProductOrderByWithRelationInput
+  }
+}
+
+Unknown argument `createdAt`. Available options are marked with ?.
+ [LOGGER] 2024-01-28 07:09:21.347 PM error : controllers/cart.controller.js:getAllCart - 
+Invalid `prisma.carts.findMany()` invocation:
+
+{
+  orderBy: {
+    createdAt: "desc",
+    ~~~~~~~~~
+?   id?: SortOrder,
+?   price?: SortOrder,
+?   productName?: SortOrder,
+?   qty?: SortOrder,
+?   totalPrice?: SortOrder,
+?   note?: SortOrder,
+?   productId?: SortOrder,
+?   product?: ProductOrderByWithRelationInput
+  }
+}
+
+Unknown argument `createdAt`. Available options are marked with ?.
+ [LOGGER] 2024-01-28 08:12:45.737 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: "12000",
+    productName: "Kentang Goreng",
+    qty: "2",
+         ~~~
+    totalPrice: "12000",
+    note: "test",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:13:59.011 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: "12000",
+    productName: "Kentang Goreng",
+    qty: "2",
+         ~~~
+    totalPrice: "12000",
+    note: "",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:23:50.048 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: 12000,
+    productName: "Kentang Goreng",
+    qty: "1",
+         ~~~
+    totalPrice: 12000,
+    note: "jangan pedas",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:27:13.195 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: 12000,
+    productName: "Kentang Goreng",
+    qty: "1",
+         ~~~
+    totalPrice: 12000,
+    note: "jangan pedas",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:30:45.636 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: 12000,
+    productName: "Kentang Goreng",
+    qty: "1",
+         ~~~
+    totalPrice: 12000,
+    note: "jangan pedas",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:31:39.471 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: 12000,
+    productName: "Kentang Goreng",
+    qty: "1",
+         ~~~
+    totalPrice: 12000,
+    note: "jangan pedas",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.
+ [LOGGER] 2024-01-28 08:32:23.129 PM error : controllers/cart.controller.js:updateCart - 
+Invalid `prisma.carts.update()` invocation:
+
+{
+  where: {
+    id: 10
+  },
+  data: {
+    price: 12000,
+    productName: "Kentang Goreng",
+    qty: "1",
+         ~~~
+    totalPrice: 12000,
+    note: "jangan pedas",
+    productId: 73
+  }
+}
+
+Argument `qty`: Invalid value provided. Expected Int or IntFieldUpdateOperationsInput, provided String.

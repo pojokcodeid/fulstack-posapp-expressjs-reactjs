@@ -1,0 +1,324 @@
+ [LOGGER] 2024-01-27 12:51:13.949 PM error : controllers/supplier.controller.js:getAllSupplier - 
+Invalid `prisma.supplier.findMany()` invocation:
+
+{
+  orderBy: {
+    firstName: "asc",
+    lastName: "asc"
+  }
+  ~~~~~~~~~~~~~~~~~~
+}
+
+Argument `orderBy`: Invalid value provided. Expected SupplierOrderByWithRelationInput[], provided Object.
+ [LOGGER] 2024-01-27 12:58:44.838 PM error : controllers/supplier.controller.js:createSupplier - 
+Invalid `prisma.supplier.create()` invocation:
+
+{
+  data: {
+    firstName: "Pojok",
+    phome: "12345678",
+    email: undefined,
+    address: "jl. jurago no.21",
++   lastName: String
+  }
+}
+
+Argument `lastName` is missing.
+ [LOGGER] 2024-01-27 01:00:20.243 PM error : controllers/supplier.controller.js:createSupplier - 
+Invalid `prisma.supplier.create()` invocation:
+
+{
+  data: {
+    firstName: "Pojok",
+    phome: "12345678",
+    email: null,
+    address: "jl. jurago no.21",
++   lastName: String
+  }
+}
+
+Argument `lastName` must not be null.
+ [LOGGER] 2024-01-27 01:36:58.252 PM error : controllers/supplier.controller.js:createSupplier - 
+Invalid `prisma.supplier.create()` invocation:
+
+{
+  data: {
+    firstName: "Pojok",
+    lastName: null,
+    phone: "12345678",
+    email: null,
+    address: "jl. jurago no.21",
++   phome: String
+  }
+}
+
+Argument `phome` is missing.
+ [LOGGER] 2024-01-27 04:45:11.982 PM error : controllers/product.controller.js:getAllProduct - 
+Invalid `prisma.product.findMany()` invocation:
+
+{
+  where: {
+    OR: [
+      {
+        productName: {
+          contains: ""
+        },
+        qty: {
+          contains: 0
+        },
+        price: {
+          contains: 0
+        }
+      }
+    ]
+  },
+  take: 10,
+  orderBy: {
+    id: "desc"
+  }
+}
+
+Unknown argument `contains`. Available options are marked with ?.
+ [LOGGER] 2024-01-27 04:46:41.917 PM error : controllers/product.controller.js:getAllProduct - 
+Invalid `prisma.product.findMany()` invocation:
+
+{
+  where: {
+    OR: [
+      {
+        productName: {
+          contains: ""
+        }
+      },
+      {
+        qty: {
+          contains: 0
+        }
+      },
+      {
+        price: {
+          contains: 0
+        }
+      }
+    ]
+  },
+  take: 10,
+  orderBy: {
+    id: "desc"
+  }
+}
+
+Unknown argument `contains`. Available options are marked with ?.
+ [LOGGER] 2024-01-27 04:47:35.245 PM error : controllers/product.controller.js:getAllProduct - 
+Invalid `prisma.product.findMany()` invocation:
+
+{
+  where: {
+    OR: [
+      {
+        productName: {
+          contains: ""
+        }
+      },
+      {
+        qty: {
+          contains: 0
+        }
+      },
+      {
+        price: {
+          contains: 0
+        }
+      }
+    ]
+  },
+  take: 10,
+  orderBy: {
+    id: "desc"
+  }
+}
+
+Unknown argument `contains`. Available options are marked with ?.
+ [LOGGER] 2024-01-27 05:14:34.139 PM error : controllers/product.controller.js:createProduct - 
+Invalid `prisma.product.create()` invocation:
+
+{
+  data: {
+    productName: "Indomie 250G",
+    code: "PRD-23927890691",
+    qty: 0,
+    price: 2500,
+    kategoryId: 1,
+    supplierId: 1,
++   image: String
+  }
+}
+
+Argument `image` is missing.
+ [LOGGER] 2024-01-27 05:23:44.370 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:129:26)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:24:18.672 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:129:26)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:26:59.269 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:29:52.243 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:31:20.474 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:33:16.738 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:33:30.168 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:34:29.388 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 05:34:52.661 PM error : uncaughtException: Cannot read properties of undefined (reading 'data')
+TypeError: Cannot read properties of undefined (reading 'data')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:130:25)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+ [LOGGER] 2024-01-27 06:38:41.699 PM error : controllers/product.controller.js:getAllProduct - 
+Invalid `prisma.product.findMany()` invocation:
+
+{
+  where: {
+    id: {
+      lt: 26
+    },
+    OR: [
+      {
+        productName: {
+          contains: ""
+        }
+      },
+      {
+        qty: {
+          contains: 0
+        }
+      },
+      {
+        price: {
+          contains: 0
+        }
+      }
+    ]
+  },
+  take: 25,
+  orderBy: {
+    id: "desc"
+  }
+}
+
+Unknown argument `contains`. Available options are marked with ?.
+ [LOGGER] 2024-01-27 07:17:07.955 PM error : controllers/product.controller.js:getAllProduct - 
+Invalid `prisma.product.findMany()` invocation:
+
+{
+  where: {
+    OR: [
+      {
+        productName: {
+          contains: "mie"
+        }
+      },
+      {
+        qty: null
+      },
+      {
+        price: null
+      }
+    ]
+  },
+  take: 5,
+  orderBy: {
+    id: "desc"
+  }
+}
+
+Argument `qty` is missing.

@@ -1,0 +1,98 @@
+ [LOGGER] 2024-01-31 04:52:53.220 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:52:53.225 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:52:53.227 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:52:53.231 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:52:53.239 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:52:53.241 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:05.168 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:26.572 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.733 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.734 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.736 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.738 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.751 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.
+ [LOGGER] 2024-01-31 04:54:35.752 PM error : controllers/user.controller.js:setRefreshToken - 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.

@@ -1,0 +1,169 @@
+ [LOGGER] 2024-02-02 09:31:34.760 AM error : controllers/purchase.controller.js:getPurchaseById - 
+Invalid `prisma.purchase.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'purchasedetail'.
+ [LOGGER] 2024-02-02 09:32:23.934 AM error : controllers/purchase.controller.js:getPurchaseById - 
+Invalid `prisma.purchase.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'User'.
+ [LOGGER] 2024-02-02 09:34:46.124 AM error : controllers/purchase.controller.js:getPurchaseById - 
+Invalid `prisma.purchase.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'User'.
+ [LOGGER] 2024-02-02 09:35:08.053 AM error : controllers/purchase.controller.js:getPurchaseById - 
+Invalid `prisma.purchase.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'User'.
+ [LOGGER] 2024-02-02 09:35:09.242 AM error : controllers/purchase.controller.js:getPurchaseById - 
+Invalid `prisma.purchase.findUnique()` invocation:
+
+
+Cannot select both '$scalars: true' and a specific scalar field 'User'.
+ [LOGGER] 2024-02-02 12:09:45.382 PM error : controllers/product.controller.js:getProductById - 
+Invalid `prisma.product.findUnique()` invocation:
+
+{
+  include: {
+    kategory: true,
+    supplier: true
+  },
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-02-02 12:09:56.942 PM error : controllers/product.controller.js:getProductById - 
+Invalid `prisma.product.findUnique()` invocation:
+
+{
+  include: {
+    kategory: true,
+    supplier: true
+  },
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-02-02 12:09:58.043 PM error : controllers/product.controller.js:getProductById - 
+Invalid `prisma.product.findUnique()` invocation:
+
+{
+  include: {
+    kategory: true,
+    supplier: true
+  },
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-02-02 12:12:16.147 PM error : controllers/product.controller.js:getProductById - 
+Invalid `prisma.product.findUnique()` invocation:
+
+{
+  include: {
+    kategory: true,
+    supplier: true
+  },
+  where: {
++   id: Int
+  }
+}
+
+Argument `id` is missing.
+ [LOGGER] 2024-02-02 12:50:50.602 PM error : controllers/product.controller.js:generatePdf - Cannot read properties of undefined (reading 'VITE_API_URL')
+ [LOGGER] 2024-02-02 02:13:12.919 PM error : controllers/product.controller.js:generatePdf - ENOENT: no such file or directory, unlink 'C:\youtube\livesearch\backend\public\pdf\product.pdf'
+ [LOGGER] 2024-02-02 03:34:55.976 PM error : controllers/product.controller.js:generateExcel - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'integer) as price, kategoryId, supplierId, createdAt, updatedAt 
+    FROM Produc' at line 1`
+ [LOGGER] 2024-02-02 07:09:16.288 PM error : uncaughtException: ENOENT: no such file or directory, open 'C:\youtube\livesearch\backend\src\templates\orderTemplate.html'
+Error: ENOENT: no such file or directory, open 'C:\youtube\livesearch\backend\src\templates\orderTemplate.html'
+    at Object.readFileSync (node:fs:453:20)
+    at generatePdf (file:///C:/youtube/livesearch/backend/src/controllers/order.controller.js:147:17)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/youtube/livesearch/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:328:13)
+ [LOGGER] 2024-02-02 07:30:39.021 PM error : controllers/product.controller.js:generatePdf - Parse error on line 42:
+...           <td>Rp {{Number(this.totalPri
+-----------------------^
+Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'
+ [LOGGER] 2024-02-02 07:30:46.050 PM error : controllers/product.controller.js:generatePdf - Parse error on line 42:
+...           <td>Rp {{Number(this.totalPri
+-----------------------^
+Expecting 'ID', 'STRING', 'NUMBER', 'BOOLEAN', 'UNDEFINED', 'NULL', 'DATA', got 'INVALID'
+ [LOGGER] 2024-02-02 08:37:24.776 PM error : controllers/product.controller.js:generatePdf - 
+Invalid `prisma.orders.findMany()` invocation:
+
+{
+  include: {
+    user: {
+      select: {
+        name: true
+      }
+    },
+    Orderdetail: true
+  },
+  where: {
+    date: {
+      gte: new Date("Invalid Date"),
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+      lte: new Date("Invalid Date")
+    }
+  }
+}
+
+Invalid value for argument `gte`: Provided Date object is invalid. Expected Date.
+ [LOGGER] 2024-02-02 08:38:03.322 PM error : controllers/product.controller.js:generatePdf - 
+Invalid `prisma.orders.findMany()` invocation:
+
+{
+  where: {
+    date: {
+      gte: new Date("Invalid Date"),
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+      lte: new Date("Invalid Date")
+    }
+  },
+  include: {
+    user: {
+      select: {
+        name: true
+      }
+    },
+    Orderdetail: true
+  }
+}
+
+Invalid value for argument `gte`: Provided Date object is invalid. Expected Date.
+ [LOGGER] 2024-02-02 09:09:51.077 PM error : controllers/product.controller.js:generateExcel - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1525`. Message: `Incorrect DATETIME value: '?'`
+ [LOGGER] 2024-02-02 09:11:08.226 PM error : controllers/product.controller.js:generateExcel - 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1525`. Message: `Incorrect DATETIME value: '?'`
