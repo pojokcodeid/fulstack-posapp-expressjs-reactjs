@@ -35,17 +35,17 @@ const Login = () => {
       className="border d-flex align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
-      <Card className="col-md-3 bg-body-tertiary border-0">
+      <Card className="col-lg-3 col-md-6 col-sm-6 bg-body-tertiary border-0">
         <Card.Body>
           <Card.Title className="text-center mb-5">
             <h4>Login</h4>
           </Card.Title>
           <Form onSubmit={handleSubmit}>
             <Form.Group as={Row} className="mb-3">
-              <Form.Label column sm="3">
+              <Form.Label column lg="3" sm="12">
                 Username
               </Form.Label>
-              <Col sm="9">
+              <Col lg="9" sm="12">
                 <Form.Control
                   type="text"
                   value={userName}
@@ -55,10 +55,10 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group as={Row} className="mb-3">
-              <Form.Label column sm="3">
+              <Form.Label column lg="3" sm="12">
                 Password
               </Form.Label>
-              <Col sm="9">
+              <Col lg="9" sm="12">
                 <Form.Control
                   type="password"
                   value={password}
