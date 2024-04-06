@@ -18,13 +18,14 @@ import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const AddPruchase = () => {
   const navigate = useNavigate();
   const [modalShow, setModalShow] = useState(false);
   const [currIndex, setCurrIndex] = useState(0);
   const [purchaseDate, setPurchaseDate] = useState(
-    new Date().setHours(7, 0, 0, 0) //untuk timezone asia jakarta
+    new Date().setHours(7, 0, 0, 0), //untuk timezone asia jakarta
   );
   const [note, setNote] = useState("");
   const [data, setData] = useState([
@@ -99,7 +100,7 @@ const AddPruchase = () => {
     const isDuplicate = data.some((obj, index) => {
       return (
         data.findIndex(
-          (item) => item.product.productId === obj.product.productId
+          (item) => item.product.productId === obj.product.productId,
         ) !== index
       );
     });
@@ -115,15 +116,11 @@ const AddPruchase = () => {
         }, 0);
       }
       // simpan data ke database
-      let headersList = {
-        Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-        "Content-Type": "application/json",
-      };
 
       let bodyContent = {
         date: new Date(
           new Date(purchaseDate).getTime() -
-            new Date().getTimezoneOffset() * 60 * 1000
+            new Date().getTimezoneOffset() * 60 * 1000,
         )
           .toJSON()
           .slice(0, 19)
@@ -138,7 +135,7 @@ const AddPruchase = () => {
       let reqOptions = {
         url: "/api/purchases",
         method: "POST",
-        headers: headersList,
+        headers: SetToken,
         data: bodyContent,
       };
       try {
@@ -235,7 +232,7 @@ const AddPruchase = () => {
                                       name: e.target.name,
                                       value: e.target.value,
                                     },
-                                    index
+                                    index,
                                   )
                                 }
                               />
@@ -261,7 +258,7 @@ const AddPruchase = () => {
                                     name: e.target.name,
                                     value: e.target.value,
                                   },
-                                  index
+                                  index,
                                 )
                               }
                             />

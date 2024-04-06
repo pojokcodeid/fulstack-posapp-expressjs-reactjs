@@ -16,20 +16,16 @@ import { MdEdit, MdCancel } from "react-icons/md";
 import { FaTrash, FaCheck } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListCategory = () => {
   const [data, setData] = useState([]);
 
   const loadData = async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: "/api/categorys",
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);
@@ -47,14 +43,10 @@ const ListCategory = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "DELETE",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);

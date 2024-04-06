@@ -16,11 +16,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const SalesReturn = () => {
   const [note, setNote] = useState("");
   const [returnDate, setReturnDate] = useState(
-    new Date().setHours(7, 0, 0, 0) //untuk timezone asia jakarta);
+    new Date().setHours(7, 0, 0, 0), //untuk timezone asia jakarta);
   );
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -38,10 +39,7 @@ const SalesReturn = () => {
   const loadData = async () => {
     try {
       const out = await axiosInstance.get(`/api/orders/${id}`, {
-        headers: {
-          Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-          "Content-Type": "application/json",
-        },
+        headers: SetToken,
       });
       setProduct(out.data.result.Orderdetail);
     } catch (error) {
@@ -107,16 +105,12 @@ const SalesReturn = () => {
       orderId: id,
       detail: data,
     };
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
 
     let bodyContent = data2;
     let reqOptions = {
       url: "/api/order-returns",
       method: "POST",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
     try {

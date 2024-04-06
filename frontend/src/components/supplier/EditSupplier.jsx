@@ -6,7 +6,7 @@ import { FaSave } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const EditSupplier = () => {
   const [firstName, setFirstName] = useState("");
@@ -18,15 +18,10 @@ const EditSupplier = () => {
   const { id } = useParams();
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let reqOptions = {
       url: `/api/suppliers/${id}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
 
     try {
@@ -34,7 +29,7 @@ const EditSupplier = () => {
       if (response.data) {
         setFirstName(response.data.result.firstName);
         setLastName(
-          response.data.result.lastName ? response.data.result.lastName : ""
+          response.data.result.lastName ? response.data.result.lastName : "",
         );
         setPhone(response.data.result.phone);
         setEmail(response.data.result.email ? response.data.result.email : "");
@@ -55,10 +50,6 @@ const EditSupplier = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let bodyContent = JSON.stringify({
       firstName,
       lastName,
@@ -70,7 +61,7 @@ const EditSupplier = () => {
     let reqOptions = {
       url: `/api/suppliers/${id}`,
       method: "PUT",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
 

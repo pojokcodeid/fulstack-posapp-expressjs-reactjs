@@ -13,11 +13,11 @@ import NavbarComponent from "../NavbarComponent.jsx";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-import secureLocalStorage from "react-secure-storage";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { IoPrint } from "react-icons/io5";
 import { BsArrowReturnLeft } from "react-icons/bs";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListSalesHistory = () => {
   const [data, setData] = useState([]);
@@ -29,14 +29,10 @@ const ListSalesHistory = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const loadData = async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/orders?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

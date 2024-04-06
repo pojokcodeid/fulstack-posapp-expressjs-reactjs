@@ -6,7 +6,7 @@ import { FaSave } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const AddSupplier = () => {
   const [firstName, setFirstName] = useState("");
@@ -18,10 +18,6 @@ const AddSupplier = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
 
     let bodyContent = JSON.stringify({
       firstName,
@@ -34,7 +30,7 @@ const AddSupplier = () => {
     let reqOptions = {
       url: "/api/suppliers",
       method: "POST",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
 

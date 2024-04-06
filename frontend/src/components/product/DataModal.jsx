@@ -7,7 +7,7 @@ import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 const axios = axiosInstance;
 import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroll-component";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const DataModal = (props) => {
   const { show, onHide, size, modalTitle, setSupplier } = props;
@@ -20,15 +20,10 @@ const DataModal = (props) => {
   const [hasMore, setHasMore] = useState(true);
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let reqOptions = {
       url: `/api/suppliers?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
 
     try {

@@ -15,9 +15,9 @@ import { FaSearch } from "react-icons/fa";
 import { useCallback, useEffect, useState } from "react";
 import { IoPrint } from "react-icons/io5";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListPurchase = () => {
   const [query, setQuery] = useState("");
@@ -29,14 +29,10 @@ const ListPurchase = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/purchases?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

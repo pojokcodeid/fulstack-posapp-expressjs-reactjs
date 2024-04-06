@@ -75,6 +75,7 @@ const CartModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
       backdrop="static"
+      fullscreen={"md-down"}
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">

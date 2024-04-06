@@ -1,5 +1,4 @@
 import { Breadcrumb, Button, Col, Container, Form, Row } from "react-bootstrap";
-import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../../../auth/AxiosConfig.jsx";
 import { toast } from "react-toastify";
 import PDFViewer from "../PDFViewer.jsx";
@@ -7,19 +6,16 @@ import { useState } from "react";
 import NavbarComponent from "../../NavbarComponent.jsx";
 import { FaFileExcel, FaFilePdf } from "react-icons/fa";
 import ReactDatePicker from "react-datepicker";
+import { SetToken } from "../../../auth/SetToken.jsx";
 
 const PurchaseReport = () => {
   const [startDate, setStartDate] = useState(
-    new Date().setHours(7, 0, 0, 0) //untuk timezone asia jakarta);
+    new Date().setHours(7, 0, 0, 0), //untuk timezone asia jakarta);
   );
   const [endDate, setEndDate] = useState(
-    new Date().setHours(7, 0, 0, 0) //untuk timezone asia jakarta);
+    new Date().setHours(7, 0, 0, 0), //untuk timezone asia jakarta);
   );
   const [url, setUrl] = useState("");
-  let headersList = {
-    Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-    "Content-Type": "application/json",
-  };
   const downloadPDF = async () => {
     setUrl("");
     const id = toast.loading("Please wait...", {
@@ -32,7 +28,7 @@ const PurchaseReport = () => {
     let reqOptions = {
       url: "/api/purchases-pdf",
       method: "POST",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
     try {
@@ -64,7 +60,7 @@ const PurchaseReport = () => {
     let reqOptions = {
       url: "/api/purchases-excel",
       method: "POST",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
     try {

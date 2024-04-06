@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
 import { toast } from "react-toastify";
+import { SetToken } from "../auth/SetToken.jsx";
 
 const ProfilModal = (props) => {
   const user = secureLocalStorage.getItem("user");
@@ -23,11 +24,6 @@ const ProfilModal = (props) => {
   const actionUpdate = async (e) => {
     e.preventDefault();
 
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let bodyContent = JSON.stringify({
       name: name,
       userName: username,
@@ -39,7 +35,7 @@ const ProfilModal = (props) => {
     let reqOptions = {
       url: `/api/users/${user.id}`,
       method: "PUT",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
 

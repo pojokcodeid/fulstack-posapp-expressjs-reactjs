@@ -1,11 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
+import { SetToken } from "../auth/SetToken.jsx";
 
-let headersList = {
-  Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-  "Content-Type": "application/json",
-};
+let headersList = SetToken;
 
 let reqOptionsGetAll = {
   url: "/api/categorys",
@@ -23,7 +20,7 @@ export const getAllCategory = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  }
+  },
 );
 
 const categorySlice = createSlice({

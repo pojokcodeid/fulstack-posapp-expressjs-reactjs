@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavbarComponent from "../NavbarComponent.jsx";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListSupplier = () => {
   const [data, setData] = useState([]);
@@ -30,14 +30,10 @@ const ListSupplier = () => {
   const [hasMore, setHasMore] = useState(true);
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/suppliers?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);
@@ -72,15 +68,10 @@ const ListSupplier = () => {
   };
 
   const handleDelete = async (id) => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let reqOptions = {
       url: `/api/suppliers/${id}`,
       method: "DELETE",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

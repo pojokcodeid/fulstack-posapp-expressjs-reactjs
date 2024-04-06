@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import {
@@ -14,6 +13,7 @@ import {
 } from "react-bootstrap";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ProductModal = (props) => {
   const { show, onHide, size, currIndex, handleChange } = props;
@@ -26,14 +26,10 @@ const ProductModal = (props) => {
   const [query, setQuery] = useState("");
 
   const loadData = async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/products?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);
@@ -125,7 +121,7 @@ const ProductModal = (props) => {
                         onClick={() => {
                           handleChange(
                             { name: "product", value: JSON.stringify(item) },
-                            currIndex
+                            currIndex,
                           ),
                             onHide();
                         }}

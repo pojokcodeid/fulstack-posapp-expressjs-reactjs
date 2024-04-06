@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const EditCategory = () => {
   const [name, setName] = useState("");
@@ -14,15 +14,10 @@ const EditCategory = () => {
   const { id } = useParams();
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
 
     try {
@@ -45,11 +40,6 @@ const EditCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let bodyContent = JSON.stringify({
       kategoryName: name,
     });
@@ -57,7 +47,7 @@ const EditCategory = () => {
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "PUT",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
 

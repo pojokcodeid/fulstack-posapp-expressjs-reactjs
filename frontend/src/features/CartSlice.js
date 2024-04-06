@@ -1,11 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../auth/SetToken.jsx";
 
-let headersList = {
-  Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-  "Content-Type": "application/json",
-};
+let headersList = SetToken;
 
 let reqOptionsGetAll = {
   url: "/api/carts",

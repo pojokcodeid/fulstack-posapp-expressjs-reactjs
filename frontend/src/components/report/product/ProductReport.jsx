@@ -1,18 +1,14 @@
 import { Breadcrumb, Button, Col, Container, Form, Row } from "react-bootstrap";
-import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../../../auth/AxiosConfig.jsx";
 import { toast } from "react-toastify";
 import PDFViewer from "../PDFViewer.jsx";
 import { useState } from "react";
 import NavbarComponent from "../../NavbarComponent.jsx";
 import { FaFileExcel, FaFilePdf } from "react-icons/fa";
+import { SetToken } from "../../../auth/SetToken.jsx";
 
 const ProductReport = () => {
   const [url, setUrl] = useState("");
-  let headersList = {
-    Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-    "Content-Type": "application/json",
-  };
   const downloadPDF = async () => {
     setUrl("");
     const id = toast.loading("Please wait...", {
@@ -21,7 +17,7 @@ const ProductReport = () => {
     let reqOptions = {
       url: "/api/products-pdf",
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const out = await axiosInstance.request(reqOptions);
@@ -48,7 +44,7 @@ const ProductReport = () => {
     let reqOptions = {
       url: "/api/products-excel",
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const out = await axiosInstance.request(reqOptions);

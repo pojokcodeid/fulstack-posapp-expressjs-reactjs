@@ -19,7 +19,7 @@ import { FaCheck, FaSearch } from "react-icons/fa";
 import { confirmAlert } from "react-confirm-alert";
 import { MdCancel } from "react-icons/md";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListProduct = () => {
   const [data, setData] = useState([]);
@@ -32,14 +32,10 @@ const ListProduct = () => {
   const [change, setChange] = useState(0);
 
   const loadData = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/products?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);
@@ -74,14 +70,10 @@ const ListProduct = () => {
   };
 
   const actionDelete = async (id) => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: `/api/products/${id}`,
       method: "DELETE",
-      headers: headersList,
+      headers: SetToken,
     };
     try {
       const out = await axios.request(reqOptions);

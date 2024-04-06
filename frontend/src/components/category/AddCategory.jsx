@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken } from "../../auth/SetToken.jsx";
 
 const AddCategory = () => {
   const [name, setName] = useState("");
@@ -15,11 +15,6 @@ const AddCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
-
     let bodyContent = JSON.stringify({
       kategoryName: name,
     });
@@ -27,7 +22,7 @@ const AddCategory = () => {
     let reqOptions = {
       url: "/api/categorys",
       method: "POST",
-      headers: headersList,
+      headers: SetToken,
       data: bodyContent,
     };
 

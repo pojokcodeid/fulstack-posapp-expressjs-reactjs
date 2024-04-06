@@ -16,7 +16,7 @@ import DataModal from "./DataModal.jsx";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import NavbarComponent from "../NavbarComponent.jsx";
-import secureLocalStorage from "react-secure-storage";
+import { SetToken, SetTokenMultipart } from "../../auth/SetToken.jsx";
 
 const AddProduct = () => {
   const [data, setData] = useState([]);
@@ -32,14 +32,10 @@ const AddProduct = () => {
   const navigate = useNavigate();
 
   const loadKategory = useCallback(async () => {
-    let headersList = {
-      Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-      "Content-Type": "application/json",
-    };
     let reqOptions = {
       url: "/api/categorys",
       method: "GET",
-      headers: headersList,
+      headers: SetToken,
     };
     const out = await axios.request(reqOptions);
     const result = out.data.result.map((item) => {
@@ -70,10 +66,7 @@ const AddProduct = () => {
     formData.append("supplierId", supplier.id);
     try {
       const out = await axios.post("/api/products", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-        },
+        headers: SetTokenMultipart,
       });
       if (out.data) {
         toast.success(out.data.message, {

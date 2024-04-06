@@ -1,11 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
+import { SetToken } from "../auth/SetToken.jsx";
 
-let headersList = {
-  Authorization: "Bearer " + secureLocalStorage.getItem("acessToken"),
-  "Content-Type": "application/json",
-};
+let headersList = SetToken;
 
 export const getAllProduct = createAsyncThunk(
   "product/getAllProduct",
@@ -22,7 +19,7 @@ export const getAllProduct = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  }
+  },
 );
 
 export const getAllByCategory = createAsyncThunk(
@@ -40,7 +37,7 @@ export const getAllByCategory = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  }
+  },
 );
 
 const productSlice = createSlice({

@@ -19,7 +19,7 @@ const TotalCart = ({ carts }) => {
     try {
       const order = {
         date: new Date(
-          new Date().toLocaleString("en", { timeZone: "Asia/Jakarta" })
+          new Date().toLocaleString("en", { timeZone: "Asia/Jakarta" }),
         ),
         total: sum,
         ppn: sum * 0.11,
