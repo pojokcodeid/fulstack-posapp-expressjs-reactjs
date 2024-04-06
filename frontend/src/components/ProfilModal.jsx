@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import secureLocalStorage from "react-secure-storage";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
 import { toast } from "react-toastify";
-import { SetToken } from "../auth/SetToken.jsx";
 
 const ProfilModal = (props) => {
   const user = secureLocalStorage.getItem("user");
@@ -35,7 +34,6 @@ const ProfilModal = (props) => {
     let reqOptions = {
       url: `/api/users/${user.id}`,
       method: "PUT",
-      headers: SetToken,
       data: bodyContent,
     };
 

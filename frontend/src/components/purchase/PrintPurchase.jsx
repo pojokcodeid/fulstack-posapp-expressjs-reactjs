@@ -6,7 +6,6 @@ import { useCallback, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoPrint } from "react-icons/io5";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const PrintPurchase = () => {
   const [data, setData] = useState({});
@@ -15,9 +14,7 @@ const PrintPurchase = () => {
 
   const loadData = useCallback(async () => {
     try {
-      const out = await axiosInstance.get(`/api/purchases/${id}`, {
-        headers: SetToken,
-      });
+      const out = await axiosInstance.get(`/api/purchases/${id}`, {});
       setData(out.data.result);
       setDetail(out.data.result.Purchasedetail);
     } catch (error) {

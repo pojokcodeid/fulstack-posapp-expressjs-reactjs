@@ -16,7 +16,6 @@ import DataModal from "./DataModal.jsx";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken, SetTokenMultipart } from "../../auth/SetToken.jsx";
 
 const EditProduct = () => {
   const [data, setData] = useState([]);
@@ -34,9 +33,7 @@ const EditProduct = () => {
   const { id } = useParams();
 
   const loadData = useCallback(async () => {
-    const out = await axios.get(`/api/products/${id}`, {
-      headers: SetToken,
-    });
+    const out = await axios.get(`/api/products/${id}`, {});
     setProduct(out.data.result);
     setBarcode(out.data.result.barcode ? out.data.result.barcode : "");
     setNama(out.data.result.productName);
@@ -56,9 +53,7 @@ const EditProduct = () => {
   }, [loadData]);
 
   const loadKategory = useCallback(async () => {
-    const out = await axios.get("/api/categorys", {
-      headers: SetToken,
-    });
+    const out = await axios.get("/api/categorys", {});
     const result = out.data.result.map((item) => {
       return { value: item.id, label: item.kategoryName };
     });
@@ -87,7 +82,9 @@ const EditProduct = () => {
     formData.append("supplierId", supplier.id);
     try {
       const out = await axios.put(`/api/products/${id}`, formData, {
-        headers: SetTokenMultipart,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       if (out.data) {
         toast.success(out.data.message, {

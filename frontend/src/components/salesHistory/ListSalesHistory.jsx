@@ -17,7 +17,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 import { IoPrint } from "react-icons/io5";
 import { BsArrowReturnLeft } from "react-icons/bs";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListSalesHistory = () => {
   const [data, setData] = useState([]);
@@ -32,7 +31,6 @@ const ListSalesHistory = () => {
     let reqOptions = {
       url: `/api/orders?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

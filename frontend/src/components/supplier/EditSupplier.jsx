@@ -6,7 +6,6 @@ import { FaSave } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const EditSupplier = () => {
   const [firstName, setFirstName] = useState("");
@@ -21,7 +20,6 @@ const EditSupplier = () => {
     let reqOptions = {
       url: `/api/suppliers/${id}`,
       method: "GET",
-      headers: SetToken,
     };
 
     try {
@@ -61,7 +59,6 @@ const EditSupplier = () => {
     let reqOptions = {
       url: `/api/suppliers/${id}`,
       method: "PUT",
-      headers: SetToken,
       data: bodyContent,
     };
 

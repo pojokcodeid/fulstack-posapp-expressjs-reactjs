@@ -5,7 +5,6 @@ import PDFViewer from "../PDFViewer.jsx";
 import { useState } from "react";
 import NavbarComponent from "../../NavbarComponent.jsx";
 import { FaFileExcel, FaFilePdf } from "react-icons/fa";
-import { SetToken } from "../../../auth/SetToken.jsx";
 
 const SupplierReport = () => {
   const [url, setUrl] = useState("");
@@ -17,7 +16,6 @@ const SupplierReport = () => {
     let reqOptions = {
       url: "/api/suppliers-pdf",
       method: "GET",
-      headers: SetToken,
     };
     try {
       const out = await axiosInstance.request(reqOptions);
@@ -44,7 +42,6 @@ const SupplierReport = () => {
     let reqOptions = {
       url: "/api/suppliers-excel",
       method: "GET",
-      headers: SetToken,
     };
     try {
       const out = await axiosInstance.request(reqOptions);

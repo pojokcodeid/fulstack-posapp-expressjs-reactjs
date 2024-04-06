@@ -11,7 +11,6 @@ import { Bar } from "react-chartjs-2";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 ChartJS.register(
   CategoryScale,
@@ -27,16 +26,12 @@ const ChartComponent = ({ setTotPurchase, setTotOrder }) => {
   const [order, setOrder] = useState([]);
   // load purchase
   const loadPurchase = useCallback(async () => {
-    const out = await axiosInstance.get("/api/purchase-year", {
-      headers: SetToken,
-    });
+    const out = await axiosInstance.get("/api/purchase-year", {});
     setPurchase(out.data.result);
     setTotPurchase(out.data.result.reduce((a, b) => a + b, 0));
   }, [setTotPurchase]);
   const loadOrder = useCallback(async () => {
-    const out = await axiosInstance.get("/api/orders-year", {
-      headers: SetToken,
-    });
+    const out = await axiosInstance.get("/api/orders-year", {});
     setOrder(out.data.result);
     setTotOrder(out.data.result.reduce((a, b) => a + b, 0));
   }, [setTotOrder]);

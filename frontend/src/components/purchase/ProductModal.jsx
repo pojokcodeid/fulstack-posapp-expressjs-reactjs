@@ -13,7 +13,6 @@ import {
 } from "react-bootstrap";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ProductModal = (props) => {
   const { show, onHide, size, currIndex, handleChange } = props;
@@ -29,7 +28,6 @@ const ProductModal = (props) => {
     let reqOptions = {
       url: `/api/products?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

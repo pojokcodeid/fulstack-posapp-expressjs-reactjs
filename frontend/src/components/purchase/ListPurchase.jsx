@@ -17,7 +17,6 @@ import { IoPrint } from "react-icons/io5";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListPurchase = () => {
   const [query, setQuery] = useState("");
@@ -32,7 +31,6 @@ const ListPurchase = () => {
     let reqOptions = {
       url: `/api/purchases?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: SetToken,
     };
     try {
       const response = await axiosInstance.request(reqOptions);

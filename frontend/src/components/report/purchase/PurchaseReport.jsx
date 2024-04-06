@@ -6,7 +6,6 @@ import { useState } from "react";
 import NavbarComponent from "../../NavbarComponent.jsx";
 import { FaFileExcel, FaFilePdf } from "react-icons/fa";
 import ReactDatePicker from "react-datepicker";
-import { SetToken } from "../../../auth/SetToken.jsx";
 
 const PurchaseReport = () => {
   const [startDate, setStartDate] = useState(
@@ -28,7 +27,6 @@ const PurchaseReport = () => {
     let reqOptions = {
       url: "/api/purchases-pdf",
       method: "POST",
-      headers: SetToken,
       data: bodyContent,
     };
     try {
@@ -60,7 +58,6 @@ const PurchaseReport = () => {
     let reqOptions = {
       url: "/api/purchases-excel",
       method: "POST",
-      headers: SetToken,
       data: bodyContent,
     };
     try {

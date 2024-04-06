@@ -19,7 +19,6 @@ import { FaCheck, FaSearch } from "react-icons/fa";
 import { confirmAlert } from "react-confirm-alert";
 import { MdCancel } from "react-icons/md";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListProduct = () => {
   const [data, setData] = useState([]);
@@ -35,7 +34,6 @@ const ListProduct = () => {
     let reqOptions = {
       url: `/api/products?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);
@@ -73,7 +71,6 @@ const ListProduct = () => {
     let reqOptions = {
       url: `/api/products/${id}`,
       method: "DELETE",
-      headers: SetToken,
     };
     try {
       const out = await axios.request(reqOptions);

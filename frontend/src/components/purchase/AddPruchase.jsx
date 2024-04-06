@@ -18,7 +18,6 @@ import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const AddPruchase = () => {
   const navigate = useNavigate();
@@ -135,7 +134,6 @@ const AddPruchase = () => {
       let reqOptions = {
         url: "/api/purchases",
         method: "POST",
-        headers: SetToken,
         data: bodyContent,
       };
       try {

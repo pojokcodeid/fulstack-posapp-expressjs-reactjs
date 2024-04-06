@@ -6,7 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaSave } from "react-icons/fa";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const EditCategory = () => {
   const [name, setName] = useState("");
@@ -17,7 +16,6 @@ const EditCategory = () => {
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "GET",
-      headers: SetToken,
     };
 
     try {
@@ -47,7 +45,6 @@ const EditCategory = () => {
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "PUT",
-      headers: SetToken,
       data: bodyContent,
     };
 

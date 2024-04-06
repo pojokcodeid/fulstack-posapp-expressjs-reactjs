@@ -5,13 +5,10 @@ import secureLocalStorage from "react-secure-storage";
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: import.meta.env.VITE_API_TIMEOUT,
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${secureLocalStorage.getItem("acessToken")}`,
-  },
 });
-api.defaults.headers.common["Accept"] = "application/json";
-api.defaults.headers.common["Accept"] = "multipart/form-data";
+api.defaults.headers.common["Authorization"] =
+  `Bearer ${secureLocalStorage.getItem("acessToken")}`;
+api.defaults.headers.common["Content-Type"] = "application/json";
 api.interceptors.response.use(
   (response) => response, // Kembalikan response jika tidak ada error
   async (error) => {
@@ -26,9 +23,8 @@ api.interceptors.response.use(
         await RefreshToken();
 
         // Update access token di originalRequest
-        originalRequest.headers[
-          "Authorization"
-        ] = `Bearer ${secureLocalStorage.getItem("acessToken")}`;
+        originalRequest.headers["Authorization"] =
+          `Bearer ${secureLocalStorage.getItem("acessToken")}`;
 
         // Retry request yang sebelumnya error
         return api(originalRequest);
@@ -41,6 +37,6 @@ api.interceptors.response.use(
 
     // Kembalikan error jika bukan 401 atau originalRequest sudah di retry
     throw error;
-  }
+  },
 );
 export const axiosInstance = api;

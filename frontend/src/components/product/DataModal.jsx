@@ -7,7 +7,6 @@ import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 const axios = axiosInstance;
 import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const DataModal = (props) => {
   const { show, onHide, size, modalTitle, setSupplier } = props;
@@ -23,7 +22,6 @@ const DataModal = (props) => {
     let reqOptions = {
       url: `/api/suppliers?search_query=${keyword}&lastId=${lastId}&limit=${limit}`,
       method: "GET",
-      headers: SetToken,
     };
 
     try {

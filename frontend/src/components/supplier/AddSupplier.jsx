@@ -6,7 +6,6 @@ import { FaSave } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const AddSupplier = () => {
   const [firstName, setFirstName] = useState("");
@@ -30,7 +29,6 @@ const AddSupplier = () => {
     let reqOptions = {
       url: "/api/suppliers",
       method: "POST",
-      headers: SetToken,
       data: bodyContent,
     };
 

@@ -16,7 +16,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const SalesReturn = () => {
   const [note, setNote] = useState("");
@@ -38,9 +37,7 @@ const SalesReturn = () => {
   // load data
   const loadData = async () => {
     try {
-      const out = await axiosInstance.get(`/api/orders/${id}`, {
-        headers: SetToken,
-      });
+      const out = await axiosInstance.get(`/api/orders/${id}`, {});
       setProduct(out.data.result.Orderdetail);
     } catch (error) {
       const errMessage = JSON.parse(error.request.response);
@@ -110,7 +107,6 @@ const SalesReturn = () => {
     let reqOptions = {
       url: "/api/order-returns",
       method: "POST",
-      headers: SetToken,
       data: bodyContent,
     };
     try {

@@ -16,7 +16,6 @@ import { MdEdit, MdCancel } from "react-icons/md";
 import { FaTrash, FaCheck } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import NavbarComponent from "../NavbarComponent.jsx";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListCategory = () => {
   const [data, setData] = useState([]);
@@ -25,7 +24,6 @@ const ListCategory = () => {
     let reqOptions = {
       url: "/api/categorys",
       method: "GET",
-      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);
@@ -46,7 +44,6 @@ const ListCategory = () => {
     let reqOptions = {
       url: `/api/categorys/${id}`,
       method: "DELETE",
-      headers: SetToken,
     };
     try {
       const response = await axios.request(reqOptions);
