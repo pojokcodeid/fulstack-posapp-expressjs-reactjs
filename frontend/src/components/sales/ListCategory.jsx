@@ -64,39 +64,41 @@ const ListCategory = () => {
   return (
     <>
       <Col md={4} lg={2}>
-        <div className="bg-body-tertiary rounded p-3">
-          <h4>Product Kategori</h4>
-          <hr />
-          {loading ? "Loading..." : ""}
-          <ListGroup key="all001">
-            <ListGroup.Item
-              id={`all001`}
-              className="mb-1 shadow-sm border-0"
-              active
-              action
-              onClick={() => {
-                setActive(document.getElementById(`all001`)), showAll();
-              }}
-            >
-              <MdOutlineProductionQuantityLimits /> All Product
-            </ListGroup.Item>
-          </ListGroup>
-          {categorys &&
-            categorys.map((item) => (
-              <ListGroup key={item.id}>
-                <ListGroup.Item
-                  id={`key${item.id}`}
-                  className="mb-1 shadow-sm border-0"
-                  action
-                  onClick={() => {
-                    setActive(document.getElementById(`key${item.id}`)),
-                      categoryClicked(item.id);
-                  }}
-                >
-                  {setIcon(item.id)} {item.kategoryName}
-                </ListGroup.Item>
-              </ListGroup>
-            ))}
+        <div className="position-sticky z-3" style={{ top: "12px" }}>
+          <div className="bg-body-tertiary rounded p-3">
+            <h4>Product Kategori</h4>
+            <hr />
+            {loading ? "Loading..." : ""}
+            <ListGroup key="all001">
+              <ListGroup.Item
+                id={`all001`}
+                className="mb-1 shadow-sm border-0"
+                active
+                action
+                onClick={() => {
+                  setActive(document.getElementById(`all001`)), showAll();
+                }}
+              >
+                <MdOutlineProductionQuantityLimits /> All Product
+              </ListGroup.Item>
+            </ListGroup>
+            {categorys &&
+              categorys.map((item) => (
+                <ListGroup key={item.id}>
+                  <ListGroup.Item
+                    id={`key${item.id}`}
+                    className="mb-1 shadow-sm border-0"
+                    action
+                    onClick={() => {
+                      setActive(document.getElementById(`key${item.id}`)),
+                        categoryClicked(item.id);
+                    }}
+                  >
+                    {setIcon(item.id)} {item.kategoryName}
+                  </ListGroup.Item>
+                </ListGroup>
+              ))}
+          </div>
         </div>
       </Col>
     </>
