@@ -28,50 +28,52 @@ const ListOrder = () => {
   return (
     <>
       <Col md={12} lg={3} className="mb-5 pb-5">
-        <div className="bg-body-tertiary rounded p-3">
-          <h4>Order List</h4>
-          <hr />
-          {loading ? "Loading..." : ""}
-          <ListGroup variant="flush">
-            {carts ? (
-              carts.map((item) => (
-                <ListGroup.Item
-                  key={item.id}
-                  variant="flush"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    dispatch(setDetail(item)), setModalShow(true);
-                  }}
-                >
-                  <div className="fw-bold">{item.productName}</div>
-                  <div className="d-flex justify-content-between align-items-start">
-                    <div className="me-auto">
-                      <small>
-                        Rp {parseInt(item.price).toLocaleString("id-ID")} x{" "}
-                        {item.qty}
-                      </small>
-                      <p>
-                        <small>{item.note}</small>
-                      </p>
-                    </div>
-                    <div>
-                      <strong>
+        <div className="position-sticky z-3" style={{ top: "12px" }}>
+          <div className="bg-body-tertiary rounded p-3">
+            <h4>Order List</h4>
+            <hr />
+            {loading ? "Loading..." : ""}
+            <ListGroup variant="flush">
+              {carts ? (
+                carts.map((item) => (
+                  <ListGroup.Item
+                    key={item.id}
+                    variant="flush"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      dispatch(setDetail(item)), setModalShow(true);
+                    }}
+                  >
+                    <div className="fw-bold">{item.productName}</div>
+                    <div className="d-flex justify-content-between align-items-start">
+                      <div className="me-auto">
                         <small>
-                          Rp{" "}
-                          {parseInt(item.price * item.qty).toLocaleString(
-                            "id-ID"
-                          )}
+                          Rp {parseInt(item.price).toLocaleString("id-ID")} x{" "}
+                          {item.qty}
                         </small>
-                      </strong>
+                        <p>
+                          <small>{item.note}</small>
+                        </p>
+                      </div>
+                      <div>
+                        <strong>
+                          <small>
+                            Rp{" "}
+                            {parseInt(item.price * item.qty).toLocaleString(
+                              "id-ID",
+                            )}
+                          </small>
+                        </strong>
+                      </div>
                     </div>
-                  </div>
-                </ListGroup.Item>
-              ))
-            ) : (
-              <p>No Data</p>
-            )}
-          </ListGroup>
-          <TotalCart carts={carts} />
+                  </ListGroup.Item>
+                ))
+              ) : (
+                <p>No Data</p>
+              )}
+            </ListGroup>
+            <TotalCart carts={carts} />
+          </div>
         </div>
       </Col>
       <CartModal show={modalShow} onHide={() => setModalShow(false)} />
