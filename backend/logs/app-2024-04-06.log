@@ -34,3 +34,43 @@ TypeError: Cannot read properties of undefined (reading 'file')
     at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
     at trim_prefix (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:328:13)
     at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:286:9
+ [LOGGER] 2024-04-06 04:40:17.841 PM error : uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\youtube\livesearch\backend\node_modules\express\lib\application.js:635:24)
+    at file:///C:/youtube/livesearch/backend/src/index.js:8:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+ [LOGGER] 2024-04-06 04:40:35.510 PM error : uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at Server.listen (node:net:2008:7)
+    at Function.listen (C:\youtube\livesearch\backend\node_modules\express\lib\application.js:635:24)
+    at file:///C:/youtube/livesearch/backend/src/index.js:8:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+ [LOGGER] 2024-04-06 04:55:25.262 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/youtube/livesearch/backend/src/controllers/product.controller.js:123:39)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/youtube/livesearch/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\youtube\livesearch\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\youtube\livesearch\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\youtube\livesearch\backend\node_modules\express\lib\router\index.js:286:9
