@@ -1,5 +1,4 @@
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { useCallback, useEffect, useState } from "react";
 import { Breadcrumb, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaSave } from "react-icons/fa";
@@ -23,11 +22,11 @@ const EditSupplier = () => {
     };
 
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       if (response.data) {
         setFirstName(response.data.result.firstName);
         setLastName(
-          response.data.result.lastName ? response.data.result.lastName : "",
+          response.data.result.lastName ? response.data.result.lastName : ""
         );
         setPhone(response.data.result.phone);
         setEmail(response.data.result.email ? response.data.result.email : "");
@@ -63,7 +62,7 @@ const EditSupplier = () => {
     };
 
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       if (response.data) {
         toast.success(response.data.message, {
           position: "top-center",

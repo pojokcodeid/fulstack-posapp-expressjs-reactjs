@@ -1,10 +1,9 @@
-import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
+import axios from "axios";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.defaults.timeout = import.meta.env.VITE_API_TIMEOUT;
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  timeout: import.meta.env.VITE_API_TIMEOUT,
-});
+const api = axios.create();
 
 api.interceptors.request.use((request) => {
   const token = secureLocalStorage.getItem("acessToken");

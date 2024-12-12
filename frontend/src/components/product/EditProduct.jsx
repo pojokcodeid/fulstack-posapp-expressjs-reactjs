@@ -1,5 +1,4 @@
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { useCallback, useEffect, useState } from "react";
 import {
   Breadcrumb,
@@ -33,7 +32,7 @@ const EditProduct = () => {
   const { id } = useParams();
 
   const loadData = useCallback(async () => {
-    const out = await axios.get(`/api/products/${id}`, {});
+    const out = await axiosInstance.get(`/api/products/${id}`, {});
     setProduct(out.data.result);
     setBarcode(out.data.result.barcode ? out.data.result.barcode : "");
     setNama(out.data.result.productName);
@@ -53,7 +52,7 @@ const EditProduct = () => {
   }, [loadData]);
 
   const loadKategory = useCallback(async () => {
-    const out = await axios.get("/api/categorys", {});
+    const out = await axiosInstance.get("/api/categorys", {});
     const result = out.data.result.map((item) => {
       return { value: item.id, label: item.kategoryName };
     });
@@ -81,7 +80,7 @@ const EditProduct = () => {
     formData.append("kategoryId", category.value);
     formData.append("supplierId", supplier.id);
     try {
-      const out = await axios.put(`/api/products/${id}`, formData, {
+      const out = await axiosInstance.put(`/api/products/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

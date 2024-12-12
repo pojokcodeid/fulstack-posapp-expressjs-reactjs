@@ -8,7 +8,6 @@ import {
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert";
@@ -26,7 +25,7 @@ const ListCategory = () => {
       method: "GET",
     };
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       setData(response.data.result);
     } catch (error) {
       const errMessage = JSON.parse(error.request.response);
@@ -46,7 +45,7 @@ const ListCategory = () => {
       method: "DELETE",
     };
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       if (response.data) {
         toast.success(response.data.message, {
           position: "top-center",

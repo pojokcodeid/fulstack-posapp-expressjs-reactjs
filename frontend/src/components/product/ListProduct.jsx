@@ -1,5 +1,4 @@
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { useCallback, useEffect, useState } from "react";
 import {
   Breadcrumb,
@@ -36,7 +35,7 @@ const ListProduct = () => {
       method: "GET",
     };
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       const newData = response.data.result;
       setData([...data, ...newData]);
       setTempId(response.data.lastId);
@@ -73,7 +72,7 @@ const ListProduct = () => {
       method: "DELETE",
     };
     try {
-      const out = await axios.request(reqOptions);
+      const out = await axiosInstance.request(reqOptions);
       if (out.data) {
         setLastId(0);
         setData([]);

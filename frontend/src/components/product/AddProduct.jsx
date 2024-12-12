@@ -1,5 +1,4 @@
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { useCallback, useEffect, useState } from "react";
 import {
   Breadcrumb,
@@ -35,7 +34,7 @@ const AddProduct = () => {
       url: "/api/categorys",
       method: "GET",
     };
-    const out = await axios.request(reqOptions);
+    const out = await axiosInstance.request(reqOptions);
     const result = out.data.result.map((item) => {
       return { value: item.id, label: item.kategoryName };
     });
@@ -63,7 +62,7 @@ const AddProduct = () => {
     formData.append("kategoryId", category.value);
     formData.append("supplierId", supplier.id);
     try {
-      const out = await axios.post("/api/products", formData, {
+      const out = await axiosInstance.post("/api/products", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

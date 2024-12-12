@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Col, Form, InputGroup, Row, Table } from "react-bootstrap";
 import { useCallback, useEffect, useState } from "react";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { toast } from "react-toastify";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -25,7 +24,7 @@ const DataModal = (props) => {
     };
 
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       const newData = response.data.result;
       setData([...data, ...newData]);
       setTempId(response.data.lastId);

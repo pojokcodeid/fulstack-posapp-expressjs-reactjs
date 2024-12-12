@@ -1,5 +1,4 @@
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
-const axios = axiosInstance;
 import { useCallback, useEffect, useState } from "react";
 import { Breadcrumb, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
@@ -19,7 +18,7 @@ const EditCategory = () => {
     };
 
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       if (response.data) {
         setName(response.data.result.kategoryName);
       }
@@ -49,7 +48,7 @@ const EditCategory = () => {
     };
 
     try {
-      const response = await axios.request(reqOptions);
+      const response = await axiosInstance.request(reqOptions);
       if (response.data) {
         toast.success(response.data.message, {
           position: "top-center",
