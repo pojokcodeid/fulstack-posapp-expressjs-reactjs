@@ -6,7 +6,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoPrint } from "react-icons/io5";
 import { toast } from "react-toastify";
 import "./print.css";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const OrderSend = () => {
   const { id } = useParams();
@@ -15,9 +14,7 @@ const OrderSend = () => {
   // get data
   const loadData = useCallback(async () => {
     try {
-      const out = await axiosInstance.get(`/api/orders/${id}`, {
-        headers: SetToken,
-      });
+      const out = await axiosInstance.get(`/api/orders/${id}`, {});
       setData(out.data.result);
       setOrderDetail(out.data.result.Orderdetail);
     } catch (error) {

@@ -1,13 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
-import { SetToken } from "../auth/SetToken.jsx";
-
-let headersList = SetToken;
 
 let reqOptionsGetAll = {
   url: "/api/categorys",
   method: "GET",
-  headers: headersList,
 };
 
 export const getAllCategory = createAsyncThunk(
@@ -20,7 +16,7 @@ export const getAllCategory = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  },
+  }
 );
 
 const categorySlice = createSlice({

@@ -1,13 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
-import { SetToken } from "../auth/SetToken.jsx";
-
-let headersList = SetToken;
 
 let reqOptionsGetAll = {
   url: "/api/carts",
   method: "GET",
-  headers: headersList,
 };
 export const getAllCart = createAsyncThunk("cart/getAllCart", async () => {
   try {
@@ -24,7 +20,6 @@ export const addToCart = createAsyncThunk("cart/addToCart", async (data) => {
   let reqOptions = {
     url: "/api/carts",
     method: "POST",
-    headers: headersList,
     data: bodyContent,
   };
   try {
@@ -43,7 +38,6 @@ export const updateCart = createAsyncThunk("cart/updateCart", async (data) => {
   let reqOptions = {
     url: `/api/carts/${data.id}`,
     method: "PUT",
-    headers: headersList,
     data: bodyContent,
   };
   try {
@@ -65,7 +59,6 @@ export const deleteCart = createAsyncThunk("cart/deleteCart", async (data) => {
   let reqOptions = {
     url: `/api/carts/${data.id}/${data.userId}`,
     method: "DELETE",
-    headers: headersList,
     data: bodyContent,
   };
   try {

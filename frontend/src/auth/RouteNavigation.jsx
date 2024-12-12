@@ -15,7 +15,6 @@ import OrderSend from "../components/sales/OrderSend.jsx";
 import ListSalesHistory from "../components/salesHistory/ListSalesHistory.jsx";
 import Login from "../components/Login.jsx";
 import secureLocalStorage from "react-secure-storage";
-import { jwtDecode } from "jwt-decode";
 import NoPage from "../components/NoPage.jsx";
 import Logout from "../components/Logout.jsx";
 import SalesReturn from "../components/salesHistory/SalesReturn.jsx";
@@ -28,19 +27,9 @@ import SalesReport from "../components/report/sales/SalesReport.jsx";
 import PurchaseReport from "../components/report/purchase/PurchaseReport.jsx";
 
 const RouteNavigation = () => {
-  // check user login
-  let refreshExpiration = new Date();
   const refreshToken = secureLocalStorage.getItem("refreshToken");
-  if (refreshToken) {
-    try {
-      refreshExpiration = new Date(jwtDecode(refreshToken).exp * 1000);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   const buildNav = () => {
-    if (refreshExpiration > new Date()) {
+    if (refreshToken) {
       return (
         <>
           <BrowserRouter>

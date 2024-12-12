@@ -1,46 +1,62 @@
 import axios from "axios";
-import RefreshToken from "./RefreshToken.jsx";
 import secureLocalStorage from "react-secure-storage";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: import.meta.env.VITE_API_TIMEOUT,
-  headers: {
-    Authorization: `Bearer ${secureLocalStorage.getItem("acessToken")}`,
-    "Content-Type": "application/json",
-  },
 });
-// api.defaults.headers.common["Authorization"] =
-//   `Bearer ${secureLocalStorage.getItem("acessToken")}`;
-// api.defaults.headers.common["Content-Type"] = "application/json";
+
+api.interceptors.request.use((request) => {
+  const token = secureLocalStorage.getItem("acessToken");
+  if (token) {
+    request.headers["Content-Type"] = "application/json";
+    request.headers["Authorization"] = `Bearer ${token}`;
+  }
+  return request;
+});
+
+// Refresh token logic
+const refreshAuthLogic = async (failedRequest) => {
+  try {
+    let headersList = {
+      Authorization: "Bearer " + secureLocalStorage.getItem("refreshToken"),
+      "Content-Type": "application/json",
+    };
+
+    let reqOptions = {
+      url: `/api/users/refresh`,
+      method: "GET",
+      headers: headersList,
+    };
+    const response = await axios.request(reqOptions);
+    secureLocalStorage.setItem("acessToken", response.data.acessToken);
+    secureLocalStorage.setItem("refreshToken", response.data.refreshToken);
+    secureLocalStorage.setItem("user", response.data.result);
+    console.log("Simpan token baru berhasil ...");
+    failedRequest.headers["Authorization"] =
+      "Bearer " + response.data.acessToken;
+    return Promise.resolve();
+  } catch (error) {
+    // Handle refresh token expiration, e.g., redirect to login page
+    secureLocalStorage.clear();
+    console.log(error.message);
+    window.location.href = "/";
+    return Promise.reject(error);
+  }
+};
+
+// Interceptor untuk refresh token ketika access token expired
 api.interceptors.response.use(
-  (response) => response, // Kembalikan response jika tidak ada error
+  (response) => response,
   async (error) => {
     const originalRequest = error.config;
-
-    // Check apakah response error adalah 401 (Unauthorized) dan originalRequest belum di retry
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-
-      try {
-        // Refresh token
-        await RefreshToken();
-
-        // Update access token di originalRequest
-        originalRequest.headers["Authorization"] =
-          `Bearer ${secureLocalStorage.getItem("acessToken")}`;
-
-        // Retry request yang sebelumnya error
-        return api(originalRequest);
-      } catch (error) {
-        // Tangani error refresh token
-        console.error("Error refreshing token:", error);
-        throw error;
-      }
+      await refreshAuthLogic(originalRequest);
+      return api(originalRequest);
     }
-
-    // Kembalikan error jika bukan 401 atau originalRequest sudah di retry
-    throw error;
-  },
+    return Promise.reject(error);
+  }
 );
+
 export const axiosInstance = api;

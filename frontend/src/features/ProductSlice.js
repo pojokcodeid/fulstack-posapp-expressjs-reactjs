@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosInstance } from "../auth/AxiosConfig.jsx";
-import { SetToken } from "../auth/SetToken.jsx";
-
-let headersList = SetToken;
 
 export const getAllProduct = createAsyncThunk(
   "product/getAllProduct",
@@ -10,7 +7,6 @@ export const getAllProduct = createAsyncThunk(
     let reqOptionsGetAll = {
       url: `/api/products?search_query=${keyword}&limit=250`,
       method: "GET",
-      headers: headersList,
     };
     try {
       const response = await axiosInstance.request(reqOptionsGetAll);
@@ -19,7 +15,7 @@ export const getAllProduct = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  },
+  }
 );
 
 export const getAllByCategory = createAsyncThunk(
@@ -28,7 +24,6 @@ export const getAllByCategory = createAsyncThunk(
     let reqOptions = {
       url: `/api/products/category/${id}`,
       method: "GET",
-      headers: headersList,
     };
     try {
       const response = await axiosInstance.request(reqOptions);
@@ -37,7 +32,7 @@ export const getAllByCategory = createAsyncThunk(
       const data = JSON.parse(error.request.response);
       throw new Error(data ? data.message : error.message);
     }
-  },
+  }
 );
 
 const productSlice = createSlice({

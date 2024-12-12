@@ -8,7 +8,6 @@ import { FaSearch } from "react-icons/fa";
 import { axiosInstance } from "../../auth/AxiosConfig.jsx";
 import { addToCart, updateCart } from "../../features/CartSlice.js";
 import secureLocalStorage from "react-secure-storage";
-import { SetToken } from "../../auth/SetToken.jsx";
 
 const ListProduct = () => {
   const [query, setQuery] = useState("");
@@ -37,12 +36,10 @@ const ListProduct = () => {
 
   const setCart = async (product) => {
     const user = secureLocalStorage.getItem("user");
-    let headersList = SetToken;
 
     let reqOptions = {
       url: `/api/carts/product/${product.id}/${user.id}`,
       method: "GET",
-      headers: headersList,
     };
     const response = await axiosInstance.request(reqOptions);
     if (response.data.result) {
