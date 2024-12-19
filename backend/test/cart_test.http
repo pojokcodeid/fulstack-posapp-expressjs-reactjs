@@ -1,0 +1,43 @@
+### get all cart
+GET {{BASE_URL}}/carts
+Authorization: Bearer {{$global.accessToken}}
+
+### get cart by product
+GET {{BASE_URL}}/carts/product/80/1
+Authorization: Bearer {{$global.accessToken}}
+
+### create cart
+POST {{BASE_URL}}/carts
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+    "price": 25000,
+    "productName": "Sample Product",
+    "qty": 4,
+    "totalPrice": 100000,
+    "note": "",
+    "productId": 72,
+    "userId": 1
+}
+
+### edit cart
+PUT {{BASE_URL}}/carts/52
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+    "price": "25000",
+    "productName": "Sample Product",
+    "qty": 4,
+    "totalPrice": "100000",
+    "note": "",
+    "productId": 72,
+    "userId": 1
+}
+
+### delete cart
+DELETE {{BASE_URL}}/carts/52/1
+Authorization: Bearer {{$global.accessToken}}
+
+### delete cart by user id
+DELETE {{BASE_URL}}/carts/1
+Authorization: Bearer {{$global.accessToken}}

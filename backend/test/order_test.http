@@ -1,0 +1,64 @@
+### get all orders
+GET {{BASE_URL}}/orders
+Authorization: Bearer {{$global.accessToken}}
+
+### get order by id
+GET {{BASE_URL}}/orders/8
+Authorization: Bearer {{$global.accessToken}}
+
+### create order
+POST {{BASE_URL}}/orders/1
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+    "id": 8,
+    "date": "2024-12-19T03:47:24.000Z",
+    "code": "ORD-1734580044875",
+    "total": "120000",
+    "ppn": "13200",
+    "grandTotal": "133200",
+    "userId": 1,
+    "detail": [
+      {
+        "id": 18,
+        "price": "50000",
+        "productName": "Sate Kambing Muda",
+        "qty": 2,
+        "totalPrice": "100000",
+        "note": "pedas",
+        "productId": 76,
+        "orderId": 8
+      },
+      {
+        "id": 19,
+        "price": "20000",
+        "productName": "Nasi Goreng",
+        "qty": 1,
+        "totalPrice": "20000",
+        "note": "",
+        "productId": 74,
+        "orderId": 8
+      }
+    ]
+  }
+
+### get order pdf
+POST {{BASE_URL}}/orders-pdf
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "startDate":"2024-01-01",
+  "endDate":"2024-12-01"
+}
+### get order excel
+POST {{BASE_URL}}/orders-excel
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "startDate":"2024-01-01",
+  "endDate":"2024-12-01"
+}
+
+### get order year
+GET {{BASE_URL}}/orders-year
+Authorization: Bearer {{$global.accessToken}}

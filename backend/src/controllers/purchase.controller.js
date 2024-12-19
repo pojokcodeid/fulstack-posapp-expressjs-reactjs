@@ -17,7 +17,7 @@ export const createPurchase = async (req, res) => {
       });
     }
     // create prisma transaction
-    const data = await prisma.$transaction(async (prisma) => {
+    await prisma.$transaction(async (prisma) => {
       // insert purchase
       const purchase = await prisma.purchase.create({
         data: {
@@ -76,7 +76,7 @@ export const createPurchase = async (req, res) => {
     });
     return res.status(200).json({
       message: "success",
-      result: data,
+      result: value,
     });
   } catch (error) {
     logger.error(
@@ -97,27 +97,38 @@ export const getAllPurchase = async (req, res) => {
   try {
     if (last_id < 1) {
       result = await prisma.$queryRaw`
-        SELECT p.id, code, date, note, userId, name from Purchase p 
-        inner join User u on p.userId = u.id
-        WHERE (
-          code LIKE CONCAT('%', ${search}, '%')
-          OR date LIKE CONCAT('%', ${search}, '%')
-          OR note LIKE CONCAT('%', ${search}, '%')
-          OR name LIKE CONCAT('%', ${search}, '%')
-        )
-        ORDER BY p.id DESC LIMIT ${limit}`;
+          SELECT 
+              p.id, p.code, p.date, p.note, p.userId, u.name 
+          FROM  Purchase p 
+          INNER JOIN  User u 
+          ON p.userId = u.id
+          WHERE 
+              p.code LIKE ${`%${search}%`}
+              OR p.date LIKE ${`%${search}%`}
+              OR p.note LIKE ${`%${search}%`}
+              OR u.name LIKE ${`%${search}%`}
+          ORDER BY 
+              p.id DESC 
+          LIMIT ${limit};
+      `;
     } else {
       result = await prisma.$queryRaw`
-        SELECT p.id, code, date, note, userId, name from Purchase p 
-        inner join User u on p.userId = u.id
-        WHERE (
-          code LIKE CONCAT('%', ${search}, '%')
-          OR date LIKE CONCAT('%', ${search}, '%')
-          OR note LIKE CONCAT('%', ${search}, '%')
-          OR name LIKE CONCAT('%', ${search}, '%')
-        )
-        AND p.id < ${last_id}
-        ORDER BY p.id DESC LIMIT ${limit}`;
+        SELECT 
+            p.id, p.code, p.date, p.note, p.userId, u.name 
+        FROM  Purchase p 
+        INNER JOIN User u 
+        ON p.userId = u.id
+        WHERE 
+            (
+                p.code LIKE ${`%${search}%`}
+                OR p.date LIKE ${`%${search}%`}
+                OR p.note LIKE ${`%${search}%`}
+                OR u.name LIKE ${`%${search}%`}
+            )
+            AND p.id < ${last_id}
+        ORDER BY 
+            p.id DESC 
+        LIMIT ${limit};`;
     }
     return res.status(200).json({
       message: "success",
@@ -339,19 +350,21 @@ export const purchaseYearly = async (req, res) => {
   const year = parseInt(req.query.year) || new Date().getFullYear();
   try {
     const result = await prisma.$queryRaw`
-    select 
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=01) as purchase_01,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=02) as purchase_02,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=03) as purchase_03,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=04) as purchase_04,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=05) as purchase_05,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=06) as purchase_06,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=07) as purchase_07,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=08) as purchase_08,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=09) as purchase_09,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=10) as purchase_10,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=11) as purchase_11,
-    (select IFNULL(sum(grandTotal),0) jumlah from purchase where year(date)=${year} and month(date)=12) as purchase_12`;
+    SELECT 
+        IFNULL(SUM(CASE WHEN MONTH(date) = 1 THEN grandTotal ELSE 0 END), 0) AS purchase_01,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 2 THEN grandTotal ELSE 0 END), 0) AS purchase_02,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 3 THEN grandTotal ELSE 0 END), 0) AS purchase_03,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 4 THEN grandTotal ELSE 0 END), 0) AS purchase_04,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 5 THEN grandTotal ELSE 0 END), 0) AS purchase_05,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 6 THEN grandTotal ELSE 0 END), 0) AS purchase_06,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 7 THEN grandTotal ELSE 0 END), 0) AS purchase_07,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 8 THEN grandTotal ELSE 0 END), 0) AS purchase_08,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 9 THEN grandTotal ELSE 0 END), 0) AS purchase_09,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 10 THEN grandTotal ELSE 0 END), 0) AS purchase_10,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 11 THEN grandTotal ELSE 0 END), 0) AS purchase_11,
+        IFNULL(SUM(CASE WHEN MONTH(date) = 12 THEN grandTotal ELSE 0 END), 0) AS purchase_12
+    FROM purchase
+    WHERE YEAR(date) = ${year}`;
     let arry = [];
     result.map((item) => {
       arry.push(

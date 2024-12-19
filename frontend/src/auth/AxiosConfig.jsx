@@ -2,13 +2,14 @@ import secureLocalStorage from "react-secure-storage";
 import axios from "axios";
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 axios.defaults.timeout = import.meta.env.VITE_API_TIMEOUT;
+axios.defaults.headers.common["Content-Type"] = "application/json";
 
 const api = axios.create();
 
 api.interceptors.request.use((request) => {
   const token = secureLocalStorage.getItem("acessToken");
   if (token) {
-    request.headers["Content-Type"] = "application/json";
+    // request.headers["Content-Type"] = "application/json";
     request.headers["Authorization"] = `Bearer ${token}`;
   }
   return request;

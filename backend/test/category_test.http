@@ -1,0 +1,30 @@
+
+### get all kategori
+GET {{BASE_URL}}/categorys
+Authorization: Bearer {{$global.accessToken}}
+
+### get kategory by id
+GET {{BASE_URL}}/categorys/1
+Authorization: Bearer {{$global.accessToken}}
+
+### create kategory
+POST {{BASE_URL}}/categorys
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+
+{
+  "kategoryName":"testing category"
+}
+
+### update kategory
+PUT {{BASE_URL}}/categorys/17
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+
+{
+  "kategoryName":"testing category"
+}
+
+### delete category
+DELETE {{BASE_URL}}/categorys/17
+Authorization: Bearer {{$global.accessToken}}

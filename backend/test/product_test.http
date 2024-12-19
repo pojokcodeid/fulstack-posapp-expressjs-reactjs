@@ -1,0 +1,97 @@
+@lastId=82
+@limit=2
+### get all product
+GET {{BASE_URL}}/products?lastId={{lastId}}&limit={{limit}}
+Authorization: Bearer {{$global.accessToken}}
+
+### get all by id
+GET {{BASE_URL}}/products/72
+Authorization: Bearer {{$global.accessToken}}
+
+### create product
+POST {{BASE_URL}}/products
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: multipart/form-data; boundary=WebKitFormBoundary
+
+--WebKitFormBoundary
+Content-Disposition: form-data; name="barcode"
+
+123456789
+--WebKitFormBoundary
+Content-Disposition: form-data; name="productName"
+
+Sample Product
+--WebKitFormBoundary
+Content-Disposition: form-data; name="qty"
+
+100
+--WebKitFormBoundary
+Content-Disposition: form-data; name="price"
+
+25000
+--WebKitFormBoundary
+Content-Disposition: form-data; name="kategoryId"
+
+1
+--WebKitFormBoundary
+Content-Disposition: form-data; name="supplierId"
+
+5
+--WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="example.png"
+Content-Type: image/png
+
+< ./example.png
+--WebKitFormBoundary--
+
+### update product
+PUT {{BASE_URL}}/products/80
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: multipart/form-data; boundary=WebKitFormBoundary
+
+--WebKitFormBoundary
+Content-Disposition: form-data; name="barcode"
+
+123456789
+--WebKitFormBoundary
+Content-Disposition: form-data; name="productName"
+
+Sample Product
+--WebKitFormBoundary
+Content-Disposition: form-data; name="qty"
+
+100
+--WebKitFormBoundary
+Content-Disposition: form-data; name="price"
+
+25000
+--WebKitFormBoundary
+Content-Disposition: form-data; name="kategoryId"
+
+1
+--WebKitFormBoundary
+Content-Disposition: form-data; name="supplierId"
+
+5
+--WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="example.png"
+Content-Type: image/png
+
+< ./example.png
+--WebKitFormBoundary--
+
+### get pdf product
+GET {{BASE_URL}}/products-pdf
+Authorization: Bearer {{$global.accessToken}}
+
+### get excelproduct
+GET {{BASE_URL}}/products-excel
+Authorization: Bearer {{$global.accessToken}}
+
+### get product by category id
+GET {{BASE_URL}}/products/category/1
+Authorization: Bearer {{$global.accessToken}}
+
+### delete product
+DELETE {{BASE_URL}}/products/72
+Authorization: Bearer {{$global.accessToken}}

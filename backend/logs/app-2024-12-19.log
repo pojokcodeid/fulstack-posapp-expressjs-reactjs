@@ -1,0 +1,148 @@
+ [LOGGER] 2024-12-19 08:14:55.263 AM error : controllers/user.controller.js:createUser - 
+Invalid `prisma.user.create()` invocation:
+
+
+Unique constraint failed on the constraint: `User_userName_key`
+ [LOGGER] 2024-12-19 08:21:09.845 AM error : controllers/user.controller.js:createUser - 
+Invalid `prisma.user.create()` invocation:
+
+
+Unique constraint failed on the constraint: `User_userName_key`
+ [LOGGER] 2024-12-19 10:19:19.154 AM error : controllers/user.controller.js:updateUser - 
+Invalid `prisma.user.update()` invocation:
+
+
+Unique constraint failed on the constraint: `User_userName_key`
+ [LOGGER] 2024-12-19 03:14:13.574 PM error : controllers/purchase.controller.js:createPurchase - Cannot read properties of undefined (reading 'productId')
+ [LOGGER] 2024-12-19 03:30:49.501 PM error : controllers/purchase.controller.js:createPurchase - "[object Object]" is not valid JSON
+ [LOGGER] 2024-12-19 05:15:26.595 PM error : controllers/product.controller.js:deleteProduct - 
+Invalid `prisma.product.delete()` invocation:
+
+
+Foreign key constraint failed on the field: `productId`
+ [LOGGER] 2024-12-19 05:18:34.169 PM error : controllers/cart.controller.js:deleteAllCart - 
+Invalid `prisma.orderreturndetail.create()` invocation:
+
+{
+  data: {
+    productId: 72,
+    productName: "Orange Juice",
+    price: 15000,
+    qty: 1,
+    total: NaN,
+    returnId: 15,
++   orderreturn: {
++     create: OrderreturnCreateWithoutOrderreturndetailInput | OrderreturnUncheckedCreateWithoutOrderreturndetailInput,
++     connectOrCreate: OrderreturnCreateOrConnectWithoutOrderreturndetailInput,
++     connect: OrderreturnWhereUniqueInput
++   }
+  }
+}
+
+Argument `orderreturn` is missing.
+ [LOGGER] 2024-12-19 05:34:02.218 PM error : controllers/product.controller.js:deleteProduct - 
+Invalid `prisma.product.delete()` invocation:
+
+
+Foreign key constraint failed on the field: `productId`
+ [LOGGER] 2024-12-19 05:35:27.727 PM error : controllers/product.controller.js:deleteProduct - 
+Invalid `prisma.product.delete()` invocation:
+
+
+Foreign key constraint failed on the field: `productId`
+ [LOGGER] 2024-12-19 05:36:53.088 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/product.controller.js:132:39)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:286:9
+ [LOGGER] 2024-12-19 05:37:57.806 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/product.controller.js:132:39)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:286:9
+ [LOGGER] 2024-12-19 05:40:14.102 PM error : uncaughtException: Cannot read properties of undefined (reading 'file')
+TypeError: Cannot read properties of undefined (reading 'file')
+    at createProduct (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/product.controller.js:123:39)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at autenticate (file:///C:/Users/Asep/Downloads/fulstack-posapp-expressjs-reactjs/backend/src/controllers/error.controller.js:25:5)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\Asep\Downloads\fulstack-posapp-expressjs-reactjs\backend\node_modules\express\lib\router\index.js:286:9
+ [LOGGER] 2024-12-19 06:30:12.131 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-12-19 06:34:16.475 PM error : controllers/cart.controller.js:deleteCart - 
+Invalid `prisma.carts.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+ [LOGGER] 2024-12-19 06:34:32.050 PM error : controllers/cart.controller.js:createCart - 
+Invalid `prisma.carts.create()` invocation:
+
+
+Unique constraint failed on the constraint: `Carts_productId_key`
+ [LOGGER] 2024-12-19 06:36:31.613 PM error : controllers/user.controller.js:deleteUser - 
+Invalid `prisma.user.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+ [LOGGER] 2024-12-19 06:50:38.544 PM error : controllers/order.controller.js:insertOrder - 
+Invalid `prisma.orders.create()` invocation:
+
+{
+  data: {
+    code: "ORD-1734609038526",
+    date: "2024-12-19",
+          ~~~~~~~~~~~~
+    total: 50000,
+    ppn: 5500,
+    grandTotal: 55500,
+    userId: 1
+  }
+}
+
+Invalid value for argument `date`: premature end of input. Expected ISO-8601 DateTime.
+ [LOGGER] 2024-12-19 06:52:03.222 PM error : controllers/order.controller.js:insertOrder - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2024-12-19 06:55:29.312 PM error : controllers/user.controller.js:deleteUser - 
+Invalid `prisma.user.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.

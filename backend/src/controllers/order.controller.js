@@ -8,6 +8,7 @@ import excelJS from "exceljs";
 export const insertOrder = async (req, res) => {
   // create prisma transaction
   try {
+    console.log(req.body);
     const data = await prisma.$transaction(async (prisma) => {
       const post = await prisma.orders.create({
         data: {
@@ -21,6 +22,7 @@ export const insertOrder = async (req, res) => {
       });
       // insert detail
       for (let i = 0; i < req.body.detail.length; i++) {
+        console.log(req.body.detail[i]);
         await prisma.orderdetail.create({
           data: {
             price: req.body.detail[i].price,

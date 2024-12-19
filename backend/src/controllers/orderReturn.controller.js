@@ -6,6 +6,7 @@ import { orderReturnValidation } from "../validations/orderReturn.validation.js"
 export const insertOrderReturn = async (req, res) => {
   // validation
   const { error, value } = orderReturnValidation(req.body);
+  // console.log(value);
   if (error) {
     return res.status(400).json({
       message: error.details[0].message,
@@ -36,6 +37,7 @@ export const insertOrderReturn = async (req, res) => {
           throw new Error("qty and product cannot be empty");
         }
         // insert order detail
+        // console.log(value.detail[i].product);
         await prisma.orderreturndetail.create({
           data: {
             productId: Number(value.detail[i].product.productId),

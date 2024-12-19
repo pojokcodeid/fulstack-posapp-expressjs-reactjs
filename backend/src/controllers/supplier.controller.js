@@ -12,28 +12,35 @@ export const getAllSupplier = async (req, res) => {
   let result = [];
   try {
     if (last_id < 1) {
-      result =
-        await prisma.$queryRaw`SELECT id, firstName, lastName, phone, email, address 
-        FROM Supplier 
-        WHERE (
-          CONCAT(firstName, ' ', lastName) LIKE CONCAT('%', ${search}, '%')
-          OR phone LIKE CONCAT('%', ${search}, '%')
-          OR email LIKE CONCAT('%', ${search}, '%')
-          OR address LIKE CONCAT('%', ${search}, '%')
-        )
-        ORDER BY id DESC LIMIT ${limit}`;
+      const searchPattern = `%${search}%`;
+      result = await prisma.$queryRaw`
+      SELECT id, firstName, lastName, phone, email, address 
+      FROM Supplier 
+      WHERE (
+        CONCAT(firstName, ' ', lastName) LIKE ${searchPattern}
+        OR phone LIKE ${searchPattern}
+        OR email LIKE ${searchPattern}
+        OR address LIKE ${searchPattern}
+      )
+      ORDER BY id DESC 
+      LIMIT ${parseInt(limit, 10)}`;
     } else {
-      result =
-        await prisma.$queryRaw`SELECT id, firstName, lastName, phone, email, address 
-        FROM Supplier 
-        WHERE (
-          CONCAT(firstName, ' ', lastName) LIKE CONCAT('%', ${search}, '%')
-          OR phone LIKE CONCAT('%', ${search}, '%')
-          OR email LIKE CONCAT('%', ${search}, '%')
-          OR address LIKE CONCAT('%', ${search}, '%')
-        )
-        AND id < ${last_id}
-        ORDER BY id DESC LIMIT ${limit}`;
+      const searchPattern = `%${search}%`;
+      const lastId = parseInt(last_id, 10);
+      const limitValue = parseInt(limit, 10);
+
+      result = await prisma.$queryRaw`
+      SELECT id, firstName, lastName, phone, email, address 
+      FROM Supplier 
+      WHERE (
+        CONCAT(firstName, ' ', lastName) LIKE ${searchPattern}
+        OR phone LIKE ${searchPattern}
+        OR email LIKE ${searchPattern}
+        OR address LIKE ${searchPattern}
+      )
+      AND id < ${lastId}
+      ORDER BY id DESC 
+      LIMIT ${limitValue}`;
     }
     return res.status(200).json({
       message: "success",

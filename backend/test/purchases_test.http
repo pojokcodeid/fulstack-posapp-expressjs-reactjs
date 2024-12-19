@@ -1,0 +1,57 @@
+### create purchases
+POST {{BASE_URL}}/purchases
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+  "date":"2024-12-19",
+  "note":"testing..",
+  "total":10000,
+  "ppn":1100,
+  "grandTotal":11100,
+  "userId": 1,
+  "detail":[
+      {
+        "product":{
+          "id": 24,
+          "productId": 71,
+          "productName": "Es Campur",
+          "price": "10000",
+          "qty": 1,
+          "total": "10000",
+          "purchaseId": 23
+        },
+        "price":10000,
+        "qty": 1,
+        "totalPrice":10000
+      }
+  ]
+}
+
+### get all purchase
+GET {{BASE_URL}}/purchases
+Authorization: Bearer {{$global.accessToken}}
+
+### get purchase by id
+GET {{BASE_URL}}/purchases/23
+Authorization: Bearer {{$global.accessToken}}
+
+### get purchase pdf
+POST {{BASE_URL}}/purchases-pdf
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+  "startDate":"2024-01-01",
+  "endDate":"2024-12-12"
+}
+### get purchase excel
+POST {{BASE_URL}}/purchases-excel
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+{
+  "startDate":"2024-01-01",
+  "endDate":"2024-12-12"
+}
+
+### get purchase year
+GET {{BASE_URL}}/purchase-year
+Authorization: Bearer {{$global.accessToken}}

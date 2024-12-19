@@ -16,29 +16,63 @@ export const getAllProduct = async (req, res) => {
   try {
     if (last_id < 1) {
       result = await prisma.$queryRaw`
-      SELECT id, code, barcode, productName, image, url,qty, price, kategoryId, supplierId, createdAt, updatedAt 
-      FROM Product 
-      WHERE (
-        code LIKE CONCAT('%', ${search}, '%')
-        OR productName LIKE CONCAT('%', ${search}, '%')
-        OR barcode LIKE CONCAT('%', ${search}, '%')
-        OR qty LIKE CONCAT('%', ${search}, '%')
-        OR price LIKE CONCAT('%', ${search}, '%')
-      )
-      ORDER BY id DESC LIMIT ${limit}`;
+          SELECT 
+              id, 
+              code, 
+              barcode, 
+              productName, 
+              image, 
+              url,
+              qty, 
+              price, 
+              kategoryId, 
+              supplierId, 
+              createdAt, 
+              updatedAt 
+          FROM 
+              Product 
+          WHERE 
+              (
+                  code LIKE ${`%${search}%`}
+                  OR productName LIKE ${`%${search}%`}
+                  OR barcode LIKE ${`%${search}%`}
+                  OR qty LIKE ${`%${search}%`}
+                  OR price LIKE ${`%${search}%`}
+              )
+          ORDER BY 
+              id DESC 
+          LIMIT ${limit};
+      `;
     } else {
       result = await prisma.$queryRaw`
-      SELECT id, code, barcode, productName, image, url,qty, price, kategoryId, supplierId, createdAt, updatedAt 
-      FROM Product 
-      WHERE (
-        code LIKE CONCAT('%', ${search}, '%')
-        OR productName LIKE CONCAT('%', ${search}, '%')
-        OR barcode LIKE CONCAT('%', ${search}, '%')
-        OR qty LIKE CONCAT('%', ${search}, '%')
-        OR price LIKE CONCAT('%', ${search}, '%')
-      )
-      AND id < ${last_id}
-      ORDER BY id DESC LIMIT ${limit}`;
+          SELECT 
+              id, 
+              code, 
+              barcode, 
+              productName, 
+              image, 
+              url,
+              qty, 
+              price, 
+              kategoryId, 
+              supplierId, 
+              createdAt, 
+              updatedAt 
+          FROM 
+              Product 
+          WHERE 
+              (
+                  code LIKE ${`%${search}%`}
+                  OR productName LIKE ${`%${search}%`}
+                  OR barcode LIKE ${`%${search}%`}
+                  OR CAST(qty AS CHAR) LIKE ${`%${search}%`}
+                  OR CAST(price AS CHAR) LIKE ${`%${search}%`}
+              )
+              AND id < ${last_id}
+          ORDER BY 
+              id DESC 
+          LIMIT ${limit};
+      `;
     }
     return res.status(200).json({
       message: "success",

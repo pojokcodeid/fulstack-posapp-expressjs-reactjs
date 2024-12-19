@@ -1,0 +1,63 @@
+
+### create user
+POST {{BASE_URL}}/users
+Content-Type: application/json
+{
+    "name":"Pojok Code",
+    "userName":"code2",
+    "password":"1234",
+    "confirmPassword":"1234",
+    "role":"admin"
+}
+
+### user login
+POST {{BASE_URL}}/users/login
+Content-Type: application/json
+
+{
+  "userName":"code",
+  "password":"1234"
+}
+
+// @accessToken={{JSON.parse(response.body).acessToken}}
+// @refreshToken={{JSON.parse(response.body).refreshToken}}
+{{
+  $global.accessToken=JSON.parse(response.body).acessToken;
+  $global.refreshToken=JSON.parse(response.body).refreshToken;
+}}
+
+### get all users
+GET {{BASE_URL}}/users
+Authorization: Bearer {{$global.accessToken}}
+
+### get user by id
+GET {{BASE_URL}}/users/4
+Authorization: Bearer {{$global.accessToken}}
+
+### refresh token
+GET {{BASE_URL}}/users/refresh
+Authorization: Bearer {{$global.refreshToken}}
+
+# @accessToken={{JSON.parse(response.body).acessToken}}
+# @refreshToken={{JSON.parse(response.body).refreshToken}}
+{{
+  $global.accessToken=JSON.parse(response.body).acessToken;
+  $global.refreshToken=JSON.parse(response.body).refreshToken;
+}}
+
+### update user
+PUT {{BASE_URL}}/users/4
+Authorization: Bearer {{$global.accessToken}}
+Content-Type: application/json
+
+{
+    "name":"Pojok Code",
+    "userName":"code",
+    "password":"1234",
+    "confirmPassword":"1234",
+    "role":"admin"
+}
+
+### delete user
+DELETE {{BASE_URL}}/users/6
+Authorization: Bearer {{$global.accessToken}}
